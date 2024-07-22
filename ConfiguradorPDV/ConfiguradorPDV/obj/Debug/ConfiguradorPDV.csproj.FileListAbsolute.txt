@@ -1,0 +1,10 @@
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.AssemblyReference.cache
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.Form1.resources
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.Properties.Resources.resources
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.GenerateResource.cache
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.CoreCompileInputs.cache
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.exe.config
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.exe
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.pdb
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.exe
+C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.pdb
