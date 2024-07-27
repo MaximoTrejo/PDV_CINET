@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConfiguradorPDV.DB;
 using ConfiguradorPDV.Controllers;
+using ConfiguradorPDV.Modelo;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ConfiguradorPDV
@@ -70,10 +71,34 @@ namespace ConfiguradorPDV
                 tbxClaveLinked.Enabled = true;
                 cbxCajasLinked.Enabled = true;
             }
-            else
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            tbxClaveLinked.Enabled = false;
+            cbxCajasLinked.Enabled = false;
+        }
+
+        private void btnTraerEquipos_Click(object sender, EventArgs e)
+        {
+            try
             {
-                tbxClaveLinked.Enabled = false;
-                cbxCajasLinked.Enabled = false;
+                master_controller = new master_controller(factory);
+
+
+
+                
+
+               
+                
+
+
+
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

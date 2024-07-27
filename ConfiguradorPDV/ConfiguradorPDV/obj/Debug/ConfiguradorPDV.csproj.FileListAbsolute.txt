@@ -8,3 +8,14 @@ C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\bin\Debug
 C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.pdb
 C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.exe
 C:\Users\maxim\OneDrive\Escritorio\PDV\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.pdb
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.exe.config
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.exe
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.pdb
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.AssemblyReference.cache
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.frmPrincipal.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.Properties.Resources.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.GenerateResource.cache
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.csproj.CoreCompileInputs.cache
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.exe
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.pdb
