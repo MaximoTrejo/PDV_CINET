@@ -36,18 +36,19 @@
             this.tbxPuerto = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnTraerEquipos = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvEquipos = new System.Windows.Forms.DataGridView();
+            this.btnVerPDV = new System.Windows.Forms.Button();
             this.cbxLinkedserver = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.tbxClaveLinked = new System.Windows.Forms.TextBox();
             this.cbxCajasLinked = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbxClaveCaja = new System.Windows.Forms.TextBox();
+            this.cbxClaveEquipo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxIP
@@ -56,6 +57,7 @@
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(127, 20);
             this.tbxIP.TabIndex = 0;
+            this.tbxIP.Text = "26.97.193.163";
             // 
             // tbxClave
             // 
@@ -63,6 +65,8 @@
             this.tbxClave.Name = "tbxClave";
             this.tbxClave.Size = new System.Drawing.Size(128, 20);
             this.tbxClave.TabIndex = 1;
+            this.tbxClave.Text = "cinettorcel";
+            this.tbxClave.UseSystemPasswordChar = true;
             // 
             // btnTraer
             // 
@@ -98,6 +102,7 @@
             this.tbxPuerto.Name = "tbxPuerto";
             this.tbxPuerto.Size = new System.Drawing.Size(75, 20);
             this.tbxPuerto.TabIndex = 6;
+            this.tbxPuerto.Text = "1433";
             // 
             // tabControl1
             // 
@@ -105,39 +110,44 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 115);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(438, 308);
+            this.tabControl1.Size = new System.Drawing.Size(438, 313);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.btnTraerEquipos);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.cbxClaveEquipo);
+            this.tabPage1.Controls.Add(this.tbxClaveCaja);
+            this.tabPage1.Controls.Add(this.dgvEquipos);
+            this.tabPage1.Controls.Add(this.btnVerPDV);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(430, 282);
+            this.tabPage1.Size = new System.Drawing.Size(430, 287);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "PDV";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnTraerEquipos
+            // dgvEquipos
             // 
-            this.btnTraerEquipos.Location = new System.Drawing.Point(265, 23);
-            this.btnTraerEquipos.Name = "btnTraerEquipos";
-            this.btnTraerEquipos.Size = new System.Drawing.Size(117, 31);
-            this.btnTraerEquipos.TabIndex = 2;
-            this.btnTraerEquipos.Text = "Traer Equipos";
-            this.btnTraerEquipos.UseVisualStyleBackColor = true;
-            this.btnTraerEquipos.Click += new System.EventHandler(this.btnTraerEquipos_Click);
+            this.dgvEquipos.AllowUserToAddRows = false;
+            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipos.Location = new System.Drawing.Point(3, 3);
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEquipos.Size = new System.Drawing.Size(325, 276);
+            this.dgvEquipos.StandardTab = true;
+            this.dgvEquipos.TabIndex = 6;
+            this.dgvEquipos.TabStop = false;
             // 
-            // button1
+            // btnVerPDV
             // 
-            this.button1.Location = new System.Drawing.Point(264, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 54);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "VER PDV";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnVerPDV.Location = new System.Drawing.Point(331, 176);
+            this.btnVerPDV.Name = "btnVerPDV";
+            this.btnVerPDV.Size = new System.Drawing.Size(96, 54);
+            this.btnVerPDV.TabIndex = 1;
+            this.btnVerPDV.Text = "VER PDV";
+            this.btnVerPDV.UseVisualStyleBackColor = true;
+            this.btnVerPDV.Click += new System.EventHandler(this.btnVerPDV_Click);
             // 
             // cbxLinkedserver
             // 
@@ -186,19 +196,30 @@
             this.cbxCajasLinked.Size = new System.Drawing.Size(90, 21);
             this.cbxCajasLinked.TabIndex = 53;
             // 
-            // dataGridView1
+            // tbxClaveCaja
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 6;
+            this.tbxClaveCaja.Location = new System.Drawing.Point(331, 258);
+            this.tbxClaveCaja.Name = "tbxClaveCaja";
+            this.tbxClaveCaja.Size = new System.Drawing.Size(96, 20);
+            this.tbxClaveCaja.TabIndex = 10;
+            this.tbxClaveCaja.Text = "cinettorcel";
+            this.tbxClaveCaja.UseSystemPasswordChar = true;
+            // 
+            // cbxClaveEquipo
+            // 
+            this.cbxClaveEquipo.AutoSize = true;
+            this.cbxClaveEquipo.Location = new System.Drawing.Point(331, 238);
+            this.cbxClaveEquipo.Name = "cbxClaveEquipo";
+            this.cbxClaveEquipo.Size = new System.Drawing.Size(15, 14);
+            this.cbxClaveEquipo.TabIndex = 54;
+            this.cbxClaveEquipo.UseVisualStyleBackColor = true;
+            this.cbxClaveEquipo.CheckedChanged += new System.EventHandler(this.cbxClaveEquipo_CheckedChanged);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 436);
+            this.ClientSize = new System.Drawing.Size(458, 435);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tbxPuerto);
@@ -212,9 +233,10 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,9 +257,10 @@
         private System.Windows.Forms.TextBox tbxClaveLinked;
         private System.Windows.Forms.ComboBox cbxCajasLinked;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnTraerEquipos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnVerPDV;
+        private System.Windows.Forms.DataGridView dgvEquipos;
+        private System.Windows.Forms.CheckBox cbxClaveEquipo;
+        private System.Windows.Forms.TextBox tbxClaveCaja;
     }
 }
 

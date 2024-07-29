@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConfiguradorPDV.Controllers;
+using ConfiguradorPDV.DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,19 @@ namespace ConfiguradorPDV
 {
     public partial class FrmPDV : Form
     {
-        public FrmPDV()
+        Factory factory;
+        public FrmPDV(Factory factory)
         {
+            this.factory = factory;
             InitializeComponent();
+        }
+
+        private void FrmPDV_Load(object sender, EventArgs e)
+        {
+            linkedServer_controller linkedServer = new linkedServer_controller(factory);
+
+            tbxCuit.Text = linkedServer.TraerDatoParametroLinked("VTAPUNTO", "cinet_pdv", "POS1");
+            
         }
     }
 }
