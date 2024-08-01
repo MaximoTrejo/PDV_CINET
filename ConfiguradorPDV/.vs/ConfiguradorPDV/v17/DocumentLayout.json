@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\configuradorpdv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\configuradorpdv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\configuradorpdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\configuradorpdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|c:\\users\\maxim\\onedrive\\escritorio\\pdv_cinet\\configuradorpdv\\configuradorpdv\\db\\linkedserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\db\\linkedserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -35,75 +14,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 402,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LinkedServer.cs",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\DB\\LinkedServer.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\DB\\LinkedServer.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\DB\\LinkedServer.cs",
-              "RelativeToolTip": "ConfiguradorPDV\\DB\\LinkedServer.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAnwCQAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-01T17:50:26.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\Form1.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\Form1.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\Form1.cs",
-              "RelativeToolTip": "ConfiguradorPDV\\Form1.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAqwFMAAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T13:01:31.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmPDV.cs",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FrmPDV.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\FrmPDV.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FrmPDV.cs",
-              "RelativeToolTip": "ConfiguradorPDV\\FrmPDV.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAiwBsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T02:19:01.439Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmPDV.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FrmPDV.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\FrmPDV.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FrmPDV.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ConfiguradorPDV\\FrmPDV.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T02:18:55.207Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\Form1.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\Form1.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ConfiguradorPDV\\Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T01:14:44.581Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

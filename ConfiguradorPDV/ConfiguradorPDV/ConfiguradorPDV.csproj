@@ -59,19 +59,73 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPDV.cs">
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmCF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPDV.Designer.cs">
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmCF.Designer.cs">
+      <DependentUpon>FrmCF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmConfiguracionExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmConfiguracionExtra.Designer.cs">
+      <DependentUpon>FrmConfiguracionExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmFactura.Designer.cs">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmMail.Designer.cs">
+      <DependentUpon>FrmMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmMP.Designer.cs">
+      <DependentUpon>FrmMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\FrmPDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\FrmPDV.Designer.cs">
       <DependentUpon>FrmPDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmSQL.Designer.cs">
+      <DependentUpon>FrmSQL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPDV.resx">
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmCF.resx">
+      <DependentUpon>FrmCF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmConfiguracionExtra.resx">
+      <DependentUpon>FrmConfiguracionExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmFactura.resx">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmMail.resx">
+      <DependentUpon>FrmMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmMP.resx">
+      <DependentUpon>FrmMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\FrmPDV.resx">
       <DependentUpon>FrmPDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmSQL.resx">
+      <DependentUpon>FrmSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,8 +150,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Modelo\" />
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1264394690-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7d07339f9bdecc320c3938fc05a8106d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice-line-icon-logo-illustration-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4492311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gratis-png-instalacion-de-iconos-de-computadora-configuracion-de-computadora-ingeniero.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

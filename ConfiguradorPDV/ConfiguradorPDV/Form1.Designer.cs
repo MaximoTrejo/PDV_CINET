@@ -40,15 +40,9 @@
             this.tbxClaveCaja = new System.Windows.Forms.TextBox();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.btnVerPDV = new System.Windows.Forms.Button();
-            this.cbxLinkedserver = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.tbxClaveLinked = new System.Windows.Forms.TextBox();
-            this.cbxCajasLinked = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxIP
@@ -142,7 +136,6 @@
             this.tbxClaveCaja.Name = "tbxClaveCaja";
             this.tbxClaveCaja.Size = new System.Drawing.Size(96, 20);
             this.tbxClaveCaja.TabIndex = 10;
-            this.tbxClaveCaja.Text = "cinettorcel";
             this.tbxClaveCaja.UseSystemPasswordChar = true;
             // 
             // dgvEquipos
@@ -169,59 +162,11 @@
             this.btnVerPDV.UseVisualStyleBackColor = true;
             this.btnVerPDV.Click += new System.EventHandler(this.btnVerPDV_Click);
             // 
-            // cbxLinkedserver
-            // 
-            this.cbxLinkedserver.AutoSize = true;
-            this.cbxLinkedserver.Location = new System.Drawing.Point(133, 22);
-            this.cbxLinkedserver.Name = "cbxLinkedserver";
-            this.cbxLinkedserver.Size = new System.Drawing.Size(15, 14);
-            this.cbxLinkedserver.TabIndex = 8;
-            this.cbxLinkedserver.UseVisualStyleBackColor = true;
-            this.cbxLinkedserver.CheckedChanged += new System.EventHandler(this.cbxLinkedserver_CheckedChanged);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.button8);
-            this.groupBox5.Controls.Add(this.cbxLinkedserver);
-            this.groupBox5.Controls.Add(this.tbxClaveLinked);
-            this.groupBox5.Controls.Add(this.cbxCajasLinked);
-            this.groupBox5.Location = new System.Drawing.Point(275, 12);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(175, 84);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "LINKEDSERVER";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(111, 56);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(58, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Conectar";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // tbxClaveLinked
-            // 
-            this.tbxClaveLinked.Location = new System.Drawing.Point(6, 58);
-            this.tbxClaveLinked.Name = "tbxClaveLinked";
-            this.tbxClaveLinked.Size = new System.Drawing.Size(90, 20);
-            this.tbxClaveLinked.TabIndex = 53;
-            // 
-            // cbxCajasLinked
-            // 
-            this.cbxCajasLinked.FormattingEnabled = true;
-            this.cbxCajasLinked.Location = new System.Drawing.Point(5, 19);
-            this.cbxCajasLinked.Name = "cbxCajasLinked";
-            this.cbxCajasLinked.Size = new System.Drawing.Size(90, 21);
-            this.cbxCajasLinked.TabIndex = 53;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 435);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tbxPuerto);
             this.Controls.Add(this.cbxBases);
@@ -236,8 +181,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,11 +195,6 @@
         private System.Windows.Forms.ComboBox cbxBases;
         private System.Windows.Forms.TextBox tbxPuerto;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.CheckBox cbxLinkedserver;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox tbxClaveLinked;
-        private System.Windows.Forms.ComboBox cbxCajasLinked;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnVerPDV;
         private System.Windows.Forms.DataGridView dgvEquipos;
