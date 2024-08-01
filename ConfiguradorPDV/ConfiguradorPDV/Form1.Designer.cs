@@ -36,6 +36,8 @@
             this.tbxPuerto = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbxClaveEquipo = new System.Windows.Forms.CheckBox();
+            this.tbxClaveCaja = new System.Windows.Forms.TextBox();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.btnVerPDV = new System.Windows.Forms.Button();
             this.cbxLinkedserver = new System.Windows.Forms.CheckBox();
@@ -43,8 +45,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tbxClaveLinked = new System.Windows.Forms.TextBox();
             this.cbxCajasLinked = new System.Windows.Forms.ComboBox();
-            this.tbxClaveCaja = new System.Windows.Forms.TextBox();
-            this.cbxClaveEquipo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -57,7 +57,7 @@
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(127, 20);
             this.tbxIP.TabIndex = 0;
-            this.tbxIP.Text = "26.97.193.163";
+            this.tbxIP.Text = "26.51.65.156";
             // 
             // tbxClave
             // 
@@ -102,7 +102,7 @@
             this.tbxPuerto.Name = "tbxPuerto";
             this.tbxPuerto.Size = new System.Drawing.Size(75, 20);
             this.tbxPuerto.TabIndex = 6;
-            this.tbxPuerto.Text = "1433";
+            this.tbxPuerto.Text = "1434";
             // 
             // tabControl1
             // 
@@ -126,6 +126,25 @@
             this.tabPage1.Text = "PDV";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // cbxClaveEquipo
+            // 
+            this.cbxClaveEquipo.AutoSize = true;
+            this.cbxClaveEquipo.Location = new System.Drawing.Point(331, 238);
+            this.cbxClaveEquipo.Name = "cbxClaveEquipo";
+            this.cbxClaveEquipo.Size = new System.Drawing.Size(15, 14);
+            this.cbxClaveEquipo.TabIndex = 54;
+            this.cbxClaveEquipo.UseVisualStyleBackColor = true;
+            this.cbxClaveEquipo.CheckedChanged += new System.EventHandler(this.cbxClaveEquipo_CheckedChanged);
+            // 
+            // tbxClaveCaja
+            // 
+            this.tbxClaveCaja.Location = new System.Drawing.Point(331, 258);
+            this.tbxClaveCaja.Name = "tbxClaveCaja";
+            this.tbxClaveCaja.Size = new System.Drawing.Size(96, 20);
+            this.tbxClaveCaja.TabIndex = 10;
+            this.tbxClaveCaja.Text = "cinettorcel";
+            this.tbxClaveCaja.UseSystemPasswordChar = true;
+            // 
             // dgvEquipos
             // 
             this.dgvEquipos.AllowUserToAddRows = false;
@@ -133,6 +152,7 @@
             this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquipos.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.RowHeadersVisible = false;
             this.dgvEquipos.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvEquipos.Size = new System.Drawing.Size(325, 276);
             this.dgvEquipos.StandardTab = true;
@@ -195,25 +215,6 @@
             this.cbxCajasLinked.Name = "cbxCajasLinked";
             this.cbxCajasLinked.Size = new System.Drawing.Size(90, 21);
             this.cbxCajasLinked.TabIndex = 53;
-            // 
-            // tbxClaveCaja
-            // 
-            this.tbxClaveCaja.Location = new System.Drawing.Point(331, 258);
-            this.tbxClaveCaja.Name = "tbxClaveCaja";
-            this.tbxClaveCaja.Size = new System.Drawing.Size(96, 20);
-            this.tbxClaveCaja.TabIndex = 10;
-            this.tbxClaveCaja.Text = "cinettorcel";
-            this.tbxClaveCaja.UseSystemPasswordChar = true;
-            // 
-            // cbxClaveEquipo
-            // 
-            this.cbxClaveEquipo.AutoSize = true;
-            this.cbxClaveEquipo.Location = new System.Drawing.Point(331, 238);
-            this.cbxClaveEquipo.Name = "cbxClaveEquipo";
-            this.cbxClaveEquipo.Size = new System.Drawing.Size(15, 14);
-            this.cbxClaveEquipo.TabIndex = 54;
-            this.cbxClaveEquipo.UseVisualStyleBackColor = true;
-            this.cbxClaveEquipo.CheckedChanged += new System.EventHandler(this.cbxClaveEquipo_CheckedChanged);
             // 
             // frmPrincipal
             // 

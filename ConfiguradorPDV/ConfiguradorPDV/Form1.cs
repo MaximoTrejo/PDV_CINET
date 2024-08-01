@@ -92,7 +92,7 @@ namespace ConfiguradorPDV
                 linkedServer.CrearLinkedServer("cinettorcel", cajaSeleccionada);
             }
 
-            FrmPDV pDV = new FrmPDV(factory);
+            FrmPDV pDV = new FrmPDV(factory,cajaSeleccionada);
             pDV.Show();
         }
 

@@ -40,9 +40,9 @@ namespace ConfiguradorPDV.Controllers
 
                 reader.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("No es posible conectarse " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No es posible conectarse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return databases;

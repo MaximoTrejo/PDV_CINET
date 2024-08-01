@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using ConfiguradorPDV.DB;
+using System.Windows.Forms;
 
 namespace ConfiguradorPDV.DB
 {
@@ -17,24 +18,23 @@ namespace ConfiguradorPDV.DB
             this.factory = factory;
         }
 
-        public int CrearLinkedServer(string clave, string nombreLinked)
+        public void CrearLinkedServer(string clave, string nombreLinked)
         {
-            int exito = 1;
-
             try
             {
                 AccesoDatos accesoDatos = factory.ObtenerConexion();
 
                 string queryLinkedServer = $@"
                 EXEC sp_addlinkedserver 
-                @server = {nombreLinked}, 
+                @server = '{nombreLinked}', 
                 @srvproduct = N'SQL Server';
+
                 EXEC sp_addlinkedsrvlogin 
-                @rmtsrvname = {nombreLinked}, 
+                @rmtsrvname = '{nombreLinked}', 
                 @useself = 'false', 
                 @locallogin = NULL, 
                 @rmtuser = 'sa', 
-                @rmtpassword = {clave};
+                @rmtpassword = '{clave}';
                 ";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(queryLinkedServer);
@@ -44,11 +44,9 @@ namespace ConfiguradorPDV.DB
             }
             catch (Exception ex)
             {
-                
-                exito = 0;
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return exito;
         }
 
 

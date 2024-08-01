@@ -15,9 +15,11 @@ namespace ConfiguradorPDV
     public partial class FrmPDV : Form
     {
         Factory factory;
-        public FrmPDV(Factory factory)
+        string equipo;
+        public FrmPDV(Factory factory , string equipo)
         {
             this.factory = factory;
+            this.equipo = equipo;
             InitializeComponent();
         }
 
@@ -25,7 +27,7 @@ namespace ConfiguradorPDV
         {
             linkedServer_controller linkedServer = new linkedServer_controller(factory);
 
-            tbxCuit.Text = linkedServer.TraerDatoParametroLinked("VTAPUNTO", "cinet_pdv", "POS1");
+            tbxCuit.Text = linkedServer.TraerDatoParametroLinked("VTAPUNTO",equipo);
             
         }
     }
