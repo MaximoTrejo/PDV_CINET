@@ -15,12 +15,10 @@ namespace ConfiguradorPDV
     public partial class FrmConfiguracionExtra : Form
     {
         Factory factory;
-        string equipo;
-        public FrmConfiguracionExtra(Factory factory, string equipo)
+        public FrmConfiguracionExtra(Factory factory)
         {
             InitializeComponent();
             this.factory = factory;
-            this.equipo = equipo;
         }
     }
 }

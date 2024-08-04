@@ -48,6 +48,7 @@ namespace ConfiguradorPDV
             string puerto = tbxPuerto.Text;
             string clave = tbxClave.Text;
             string baseDatos = cbxBases.Text;
+
             Factory accesoBaseElegida = new Factory(IP, puerto, baseDatos, clave);
             accesoBaseElegida.ObtenerConexion();
             factory = accesoBaseElegida;
@@ -55,32 +56,42 @@ namespace ConfiguradorPDV
             master_controller = new master_controller(factory);
             equiposTable = master_controller.GetEquipos();
             dgvEquipos.DataSource = equiposTable;
+            dgvEquipos.CurrentCell = null;
 
 
-        }
-
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            tbxClaveCaja.Enabled = false;
         }
 
         private void btnVerPDV_Click(object sender, EventArgs e)
         {
-            LinkedServer linkedServer = new LinkedServer(factory);
+            string cajaSeleccionada;
+            string claveCaja;
+            string puertoCaja;
+            LinkedServer linkedServer = new LinkedServer(); 
 
-            string cajaSeleccionada = dgvEquipos.CurrentRow.Cells[2].Value.ToString();
-
-            if (cbxClaveEquipo.Checked)
+            if (cbxUsaLinkedServer.Checked)
             {
-                linkedServer.CrearLinkedServer(tbxClaveCaja.Text, cajaSeleccionada);
-            }
-            else
-            {
-                linkedServer.CrearLinkedServer("cinettorcel", cajaSeleccionada);
+                cajaSeleccionada = dgvEquipos.CurrentRow.Cells[2].Value.ToString();
+
+                if (cbxClaveEquipo.Checked)
+                {
+                    claveCaja = tbxClaveCaja.Text;
+                    puertoCaja = tbxPuertoCaja.Text;
+                }
+                else
+                {
+                    claveCaja = "cinettorcel";
+                    puertoCaja = "1433";
+                }
+
+                linkedServer = new LinkedServer(factory, cajaSeleccionada, claveCaja, puertoCaja);
+                linkedServer.EsLinkedServer = true;
+                linkedServer.CrearLinkedServer();
+
             }
 
-            FrmPDV pDV = new FrmPDV(factory, cajaSeleccionada);
+            FrmPDV pDV = new FrmPDV(factory,linkedServer);
             pDV.Show();
+
         }
 
         private void cbxClaveEquipo_CheckedChanged(object sender, EventArgs e)
@@ -89,10 +100,25 @@ namespace ConfiguradorPDV
             if (cbxClaveEquipo.Checked)
             {
                 tbxClaveCaja.Enabled = true;
+                tbxPuertoCaja.Enabled=true;
             }
             else
             {
                 tbxClaveCaja.Enabled = false;
+                tbxPuertoCaja .Enabled = false;
+            }
+        }
+
+        private void cbxUsaLinkedServer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxUsaLinkedServer.Checked)
+            {
+                dgvEquipos.Enabled = true;
+            }
+            else
+            {
+                dgvEquipos.Enabled = false;
+                dgvEquipos.CurrentCell = null;
             }
         }
     }

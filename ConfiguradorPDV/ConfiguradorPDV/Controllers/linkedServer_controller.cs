@@ -14,13 +14,16 @@ namespace ConfiguradorPDV.Controllers
     public class linkedServer_controller
     {
         Factory factory;
-
-        public linkedServer_controller(Factory factory)
+        string _equipo;
+        string _baseDatos;
+        public linkedServer_controller(Factory factory, string equipo)
         {
             this.factory = factory;
+            _equipo = equipo;
+            _baseDatos = TraerNombreBase(_equipo);
         }
 
-        public string TraerNombreBase(string equipo, string puerto)
+        public string TraerNombreBase(string equipo)
         {
             AccesoDatos accesoDatos = factory.ObtenerConexion();
 
@@ -44,6 +47,7 @@ namespace ConfiguradorPDV.Controllers
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             finally
             {
@@ -54,34 +58,29 @@ namespace ConfiguradorPDV.Controllers
         }
 
 
-        public string TraerDatoParametroLinked(string parametro, string equipo)
+        public string TraerDatoParametroLinked(string parametro)
         {
             string exito = "NE";
 
-            try
+            AccesoDatos accesoDatos = factory.ObtenerConexion();
+
+            string linkedDatabase = $"[{_equipo}].{_baseDatos}.dbo";
+
+            string query = $"SELECT para_valor FROM {linkedDatabase}.parametros WHERE para_codigo = @parametro";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.Parameters.AddWithValue("@parametro", parametro);
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.Read())
             {
-                AccesoDatos accesoDatos = factory.ObtenerConexion();
-                string database = TraerNombreBase(equipo, "1433");
-                string linkedDatabase = $"[{equipo}].{database}.dbo";
-                string query = $"SELECT para_valor FROM {linkedDatabase}.parametros WHERE para_codigo = @parametro";
-
-                SqlCommand comando = accesoDatos.PrepararConsulta(query);
-                comando.Parameters.AddWithValue("@parametro", parametro);
-
-                SqlDataReader reader = comando.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    exito = reader["para_valor"].ToString();
-                }
-
-                reader.Close();
-            }
-            catch
-            {
-                exito = "NE";
+                exito = reader["para_valor"].ToString();
             }
 
+            reader.Close();
+           
             return exito;
         }
 

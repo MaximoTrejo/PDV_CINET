@@ -15,11 +15,9 @@ namespace ConfiguradorPDV
     public partial class FrmSQL : Form
     {
         Factory factory;
-        string equipo;
-        public FrmSQL(Factory factory ,string equipo)
+        public FrmSQL(Factory factory)
         {
             this.factory = factory;
-            this.equipo = equipo;
             InitializeComponent();
         }
 

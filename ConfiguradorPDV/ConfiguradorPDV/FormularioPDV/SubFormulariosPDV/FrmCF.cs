@@ -15,11 +15,9 @@ namespace ConfiguradorPDV
     public partial class FrmCF : Form
     {
         Factory Factory;
-        string equipo;
-        public FrmCF(Factory factory,string equipo)
+        public FrmCF(Factory factory)
         {
             this.Factory = factory;
-            this.equipo = equipo;
             InitializeComponent();
         }
     }

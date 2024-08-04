@@ -16,12 +16,10 @@ namespace ConfiguradorPDV
     public partial class FrmMP : Form
     {
         Factory factory;
-        string equipo;
-        public FrmMP(Factory factory, string equipo)
+        public FrmMP(Factory factory)
         {
             InitializeComponent();
             this.factory = factory;
-            this.equipo = equipo;
         }
 
         private void FrmMP_Load(object sender, EventArgs e)

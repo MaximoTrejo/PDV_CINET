@@ -14,12 +14,10 @@ namespace ConfiguradorPDV
     public partial class FrmMail : Form
     {
         Factory factory;
-        string equipo;
-        public FrmMail(Factory factory,string equipo)
+        public FrmMail(Factory factory)
         {
             InitializeComponent();
             this.factory = factory;
-            this.equipo = equipo;
         }
     }
 }

@@ -15,59 +15,58 @@ namespace ConfiguradorPDV
     public partial class FrmPDV : Form
     {
         Factory factory;
-        string equipo;
-        public FrmPDV(Factory factory , string equipo)
+        parametros_controller parametros_;
+        public FrmPDV(Factory factory,LinkedServer linked)
         {
             this.factory = factory;
-            this.equipo = equipo;
+            parametros_ = new parametros_controller(factory ,linked);
             InitializeComponent();
         }
 
         private void FrmPDV_Load(object sender, EventArgs e)
         {
-            linkedServer_controller linkedServer = new linkedServer_controller(factory);
 
-            tbxCuit.Text = linkedServer.TraerDatoParametroLinked("CUIT", equipo);
-            tbxPDV.Text = linkedServer.TraerDatoParametroLinked("VTAPUNTO", equipo);
-            tbxPDVManual.Text = linkedServer.TraerDatoParametroLinked("PTOVTAMAN",equipo);
-            tbxNumCaj.Text = linkedServer.TraerDatoParametroLinked("NUMCAJA", equipo);
-            cbxTipoFac.Text  = linkedServer.TraerDatoParametroLinked("MODOFE", equipo) == "S" ? "FE" : "CF";
-            tbxCodLocal.Text = linkedServer.TraerDatoParametroLinked("NOMLOCAL", equipo);
+            tbxCuit.Text = parametros_.TraerValorParametro("CUIT");
+            tbxPDV.Text = parametros_.TraerValorParametro("VTAPUNTO");
+            tbxPDVManual.Text = parametros_.TraerValorParametro("PTOVTAMAN");
+            tbxNumCaj.Text = parametros_.TraerValorParametro("NUMCAJA");
+            cbxTipoFac.Text  = parametros_.TraerValorParametro("MODOFE") == "S" ? "FE" : "CF";
+            tbxCodLocal.Text = parametros_.TraerValorParametro("NOMLOCAL");
         }
 
         private void btnMP_Click(object sender, EventArgs e)
         {
-            FrmMP frmMP = new FrmMP(factory,equipo);
+            FrmMP frmMP = new FrmMP(factory);
             frmMP.Show();
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            FrmMail frmMail = new FrmMail(factory, equipo);
+            FrmMail frmMail = new FrmMail(factory);
             frmMail.Show();
         }
 
         private void btnCF_Click(object sender, EventArgs e)
         {
-            FrmCF frmCF = new FrmCF(factory,equipo);
+            FrmCF frmCF = new FrmCF(factory);
             frmCF.Show();
         }
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            FrmFactura frmFactura = new FrmFactura(factory, equipo);
+            FrmFactura frmFactura = new FrmFactura(factory);
             frmFactura.Show();
         }
 
         private void btnSql_Click(object sender, EventArgs e)
         {
-            FrmSQL frmSQL = new FrmSQL(factory, equipo);
+            FrmSQL frmSQL = new FrmSQL(factory);
             frmSQL.Show();
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            FrmConfiguracionExtra frmConfiguracionExtra = new FrmConfiguracionExtra(factory, equipo);
+            FrmConfiguracionExtra frmConfiguracionExtra = new FrmConfiguracionExtra(factory);
             frmConfiguracionExtra.Show();
         }
     }
