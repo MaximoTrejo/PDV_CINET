@@ -15,11 +15,19 @@ namespace ConfiguradorPDV
     public partial class FrmSQL : Form
     {
         Factory factory;
-        public FrmSQL(Factory factory)
+        LinkedServer LinkedServer_;
+        parametros_controller parametros_;
+        public FrmSQL(Factory factory, LinkedServer linkedServer_)
         {
             this.factory = factory;
             InitializeComponent();
+            LinkedServer_ = linkedServer_;
+            parametros_ = new parametros_controller(factory,linkedServer_);
         }
 
+        private void FrmSQL_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,10 +16,13 @@ namespace ConfiguradorPDV
     {
         Factory factory;
         parametros_controller parametros_;
+        LinkedServer linkedServer_;
         public FrmPDV(Factory factory,LinkedServer linked)
         {
             this.factory = factory;
+            linkedServer_ = linked;
             parametros_ = new parametros_controller(factory ,linked);
+
             InitializeComponent();
         }
 
@@ -36,37 +39,37 @@ namespace ConfiguradorPDV
 
         private void btnMP_Click(object sender, EventArgs e)
         {
-            FrmMP frmMP = new FrmMP(factory);
+            FrmMP frmMP = new FrmMP(factory,linkedServer_);
             frmMP.Show();
         }
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            FrmMail frmMail = new FrmMail(factory);
+            FrmMail frmMail = new FrmMail(factory,linkedServer_) ;
             frmMail.Show();
         }
 
         private void btnCF_Click(object sender, EventArgs e)
         {
-            FrmCF frmCF = new FrmCF(factory);
+            FrmCF frmCF = new FrmCF(factory,linkedServer_);
             frmCF.Show();
         }
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            FrmFactura frmFactura = new FrmFactura(factory);
+            FrmFactura frmFactura = new FrmFactura(factory,linkedServer_);
             frmFactura.Show();
         }
 
         private void btnSql_Click(object sender, EventArgs e)
         {
-            FrmSQL frmSQL = new FrmSQL(factory);
+            FrmSQL frmSQL = new FrmSQL(factory,linkedServer_);
             frmSQL.Show();
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            FrmConfiguracionExtra frmConfiguracionExtra = new FrmConfiguracionExtra(factory);
+            FrmConfiguracionExtra frmConfiguracionExtra = new FrmConfiguracionExtra(factory,linkedServer_);
             frmConfiguracionExtra.Show();
         }
     }
