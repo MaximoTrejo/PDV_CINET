@@ -46,7 +46,7 @@
             this.btnNumeroCaja = new System.Windows.Forms.Button();
             this.btnPDVManual = new System.Windows.Forms.Button();
             this.btnPDV = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCodLocal = new System.Windows.Forms.Button();
             this.btnTFacturacion = new System.Windows.Forms.Button();
             this.btnCuit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -194,7 +194,7 @@
             this.groupBox1.Controls.Add(this.btnNumeroCaja);
             this.groupBox1.Controls.Add(this.btnPDVManual);
             this.groupBox1.Controls.Add(this.btnPDV);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCodLocal);
             this.groupBox1.Controls.Add(this.btnTFacturacion);
             this.groupBox1.Controls.Add(this.btnCuit);
             this.groupBox1.Controls.Add(this.label6);
@@ -223,6 +223,7 @@
             this.btnNumeroCaja.TabIndex = 19;
             this.btnNumeroCaja.Text = "Configurar";
             this.btnNumeroCaja.UseVisualStyleBackColor = true;
+            this.btnNumeroCaja.Click += new System.EventHandler(this.btnNumeroCaja_Click);
             // 
             // btnPDVManual
             // 
@@ -242,14 +243,15 @@
             this.btnPDV.Text = "Configurar";
             this.btnPDV.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCodLocal
             // 
-            this.button1.Location = new System.Drawing.Point(10, 201);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Configurar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCodLocal.Location = new System.Drawing.Point(10, 201);
+            this.btnCodLocal.Name = "btnCodLocal";
+            this.btnCodLocal.Size = new System.Drawing.Size(75, 23);
+            this.btnCodLocal.TabIndex = 16;
+            this.btnCodLocal.Text = "Configurar";
+            this.btnCodLocal.UseVisualStyleBackColor = true;
+            this.btnCodLocal.Click += new System.EventHandler(this.btnCodLocal_Click);
             // 
             // btnTFacturacion
             // 
@@ -268,6 +270,7 @@
             this.btnCuit.TabIndex = 14;
             this.btnCuit.Text = "Configurar";
             this.btnCuit.UseVisualStyleBackColor = true;
+            this.btnCuit.Click += new System.EventHandler(this.btnCuit_Click);
             // 
             // label6
             // 
@@ -357,7 +360,7 @@
         private System.Windows.Forms.Button btnNumeroCaja;
         private System.Windows.Forms.Button btnPDVManual;
         private System.Windows.Forms.Button btnPDV;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCodLocal;
         private System.Windows.Forms.Button btnTFacturacion;
         private System.Windows.Forms.Button btnCuit;
     }

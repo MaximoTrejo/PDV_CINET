@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConfiguradorPDV.Controllers
 {
@@ -26,8 +27,28 @@ namespace ConfiguradorPDV.Controllers
             string exito;
             string ConexionEquipo = _equipo.VerificarLinkedServer();
             Parametros parametros = new Parametros(_conexion,parametro);
-            exito = parametros.TraerDatoParametro(ConexionEquipo);
+            exito = parametros.traerUno(ConexionEquipo);
             return exito;
+        }
+
+        public void modificarParametros(string parametro , string descrpcion,string valor)
+        {
+            
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+
+            Parametros parametros = new Parametros(_conexion, parametro,descrpcion, valor);
+
+            string existeParametro = parametros.traerUno(ConexionEquipo);
+
+            if (existeParametro != "NE")
+            {
+                parametros.modificarUno(ConexionEquipo);
+            }
+            else
+            {
+                parametros.insertarUno(ConexionEquipo);
+            }
+
         }
     }
 }

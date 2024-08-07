@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,17 @@ namespace ConfiguradorPDV
     {
         Factory factory;
         parametros_controller parametros_;
+        asientos_e_controller asientos_;
+        periodos_controller periodos_;
+        depositos_controller depositos_;
         LinkedServer linkedServer_;
         public FrmPDV(Factory factory,LinkedServer linked)
         {
             this.factory = factory;
             linkedServer_ = linked;
+            periodos_ = new periodos_controller(factory, linked);
+            depositos_ = new depositos_controller(factory, linked);
+            asientos_ = new asientos_e_controller(factory, linked);
             parametros_ = new parametros_controller(factory ,linked);
 
             InitializeComponent();
@@ -72,5 +79,29 @@ namespace ConfiguradorPDV
             FrmConfiguracionExtra frmConfiguracionExtra = new FrmConfiguracionExtra(factory,linkedServer_);
             frmConfiguracionExtra.Show();
         }
+
+        private void btnNumeroCaja_Click(object sender, EventArgs e)
+        {
+            string numeroCaja = tbxNumCaj.Text;
+            parametros_.modificarParametros("NUMCAJA", "numeroCaja",numeroCaja);
+        }
+
+        private void btnCuit_Click(object sender, EventArgs e)
+        {
+            string cuit = tbxCuit.Text;
+            parametros_.modificarParametros("CUIT", "CUIT", cuit);
+        }
+
+        private void btnCodLocal_Click(object sender, EventArgs e)
+        {
+            string codigoLocal = tbxCodLocal.Text;
+            string sucursal = tbxPDV.Text;
+            asientos_.insertarAsiento(codigoLocal, sucursal);
+            periodos_.insertarPeriodo(codigoLocal);
+            depositos_.insertarDeposito(codigoLocal, sucursal);
+            parametros_.modificarParametros("NOMLOCAL","CodigoLocal",codigoLocal);
+            parametros_.modificarParametros("VTADEPOS", "DepositoVenta", codigoLocal);
+        }
+
     }
 }

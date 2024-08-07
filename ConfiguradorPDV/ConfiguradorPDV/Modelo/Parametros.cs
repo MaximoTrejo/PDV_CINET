@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConfiguradorPDV.Modelo
 {
@@ -23,7 +24,7 @@ namespace ConfiguradorPDV.Modelo
             _para_valor = valor;
         }
 
-        public string TraerDatoParametro(string ConexionEquipo)
+        public string traerUno(string ConexionEquipo)
         {
             string exito = "NE";
 
@@ -45,6 +46,46 @@ namespace ConfiguradorPDV.Modelo
             reader.Close();
 
             return exito;
+        }
+
+        public void modificarUno(string ConexionEquipo)
+        {
+            try
+            {
+                AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+                string query = $"UPDATE {ConexionEquipo}.parametros SET para_valor = @valor , para_descripcion = @descripcion WHERE para_codigo = @parametro";
+
+                SqlCommand comando = accesoDatos.PrepararConsulta(query);
+                comando.Parameters.AddWithValue("@valor", _para_valor);
+                comando.Parameters.AddWithValue("@descripcion", _para_descripcion);
+                comando.Parameters.AddWithValue("@parametro", _para_codigo);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el parámetro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public void insertarUno(string ConexionEquipo)
+        {
+            try
+            {
+                AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+                string query = $"insert into {ConexionEquipo}.parametros ([PARA_CODIGO],[PARA_DESCRIPCION],[PARA_VALOR]) values (@parametro,@descripcion,@valor)";
+                SqlCommand comando = accesoDatos.PrepararConsulta(query);
+                comando.Parameters.AddWithValue("@valor", _para_valor);
+                comando.Parameters.AddWithValue("@descripcion", _para_descripcion);
+                comando.Parameters.AddWithValue("@parametro", _para_codigo);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el parámetro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\linkedServer_controller.cs" />
+    <Compile Include="Controllers\asientos_e_controller.cs" />
+    <Compile Include="Controllers\depositos_controller.cs" />
     <Compile Include="Controllers\master_controller.cs" />
     <Compile Include="Controllers\parametros_controller.cs" />
+    <Compile Include="Controllers\periodos_controller.cs" />
     <Compile Include="DB\AccesoDatos.cs" />
     <Compile Include="DB\Factory.cs" />
     <Compile Include="DB\LinkedServer.cs" />
@@ -101,7 +103,10 @@
     <Compile Include="FormularioPDV\SubFormulariosPDV\FrmSQL.Designer.cs">
       <DependentUpon>FrmSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Asientos_E.cs" />
+    <Compile Include="Modelo\Depositos.cs" />
     <Compile Include="Modelo\Parametros.cs" />
+    <Compile Include="Modelo\Periodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
