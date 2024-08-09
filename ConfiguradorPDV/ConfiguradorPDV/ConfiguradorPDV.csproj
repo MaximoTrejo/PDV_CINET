@@ -52,7 +52,10 @@
     <Compile Include="Controllers\cbtein_sucursal_controller.cs" />
     <Compile Include="Controllers\cbte_egresos_n_controller.cs" />
     <Compile Include="Controllers\cbte_ingresos_n_controller.cs" />
+    <Compile Include="Controllers\clientes_controller.cs" />
+    <Compile Include="Controllers\comprobantes_e_controller.cs" />
     <Compile Include="Controllers\comprobantes_n_controller.cs" />
+    <Compile Include="Controllers\dataBase_controllers.cs" />
     <Compile Include="Controllers\depositos_controller.cs" />
     <Compile Include="Controllers\master_controller.cs" />
     <Compile Include="Controllers\parametros_controller.cs" />
@@ -114,6 +117,8 @@
     <Compile Include="Modelo\cbtein_sucursal.cs" />
     <Compile Include="Modelo\cbte_egresos_n.cs" />
     <Compile Include="Modelo\cbte_ingresos_n.cs" />
+    <Compile Include="Modelo\clientes.cs" />
+    <Compile Include="Modelo\comprobantes_e.cs" />
     <Compile Include="Modelo\comprobantes_n.cs" />
     <Compile Include="Modelo\Depositos.cs" />
     <Compile Include="Modelo\Parametros.cs" />

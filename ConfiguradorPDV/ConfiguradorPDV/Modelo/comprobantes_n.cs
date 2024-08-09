@@ -49,7 +49,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = '' , suc_codigo =  WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas' ";
+            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = '' , suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas' ";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
 
@@ -63,11 +63,28 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = 'CF' WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas' ";
+            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = 'CF', suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas'";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
 
-            comando.Parameters.AddWithValue("@suc_codigo", sucAnterior);
+            comando.Parameters.AddWithValue("@suc_codigo_anterior", sucAnterior);
+            comando.Parameters.AddWithValue("@suc_codigo", _suc_codigo);
+
+            comando.ExecuteReader();
+
+        }
+
+        public void editarComprobantesManual(string ConexionEquipo, string sucAnterior)
+        {
+
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = '' , suc_codigo = @suc_codigo   WHERE  suc_codigo = @suc_codigo_anterior and CBTEE_MODULO = 'vtas' ";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.Parameters.AddWithValue("@suc_codigo_anterior", sucAnterior);
+            comando.Parameters.AddWithValue("@suc_codigo", _suc_codigo);
 
             comando.ExecuteReader();
 

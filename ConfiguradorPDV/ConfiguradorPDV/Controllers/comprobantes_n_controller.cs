@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConfiguradorPDV.Controllers
 {
@@ -51,6 +52,42 @@ namespace ConfiguradorPDV.Controllers
                     comprobantes_N.insertarUnoVtas(ConexionEquipo, "NCA");
                 }
             }
+            else
+            {
+                MessageBox.Show("El parametro VTAPUNTO se encuentra vacio , no se encuentra la sucursal anterior");
+            }
+
+
+        }
+
+
+        public void modificarComprobantesManuales(string pdv)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+
+            string sucAnterior = _parametros_Controller.TraerValorParametro("PTOVTAMAN");
+
+            comprobantes_n comprobantes_N = new comprobantes_n(_conexion, pdv);
+
+            if (sucAnterior != "NE")
+            {
+                if (comprobantes_N.BuscarComprobantes(ConexionEquipo, sucAnterior) > 0)
+                {
+                    comprobantes_N.editarComprobantesManual(ConexionEquipo, sucAnterior);
+                }
+                else
+                {
+                    comprobantes_N.insertarUnoVtas(ConexionEquipo, "FAB");
+                    comprobantes_N.insertarUnoVtas(ConexionEquipo, "FAA");
+                    comprobantes_N.insertarUnoVtas(ConexionEquipo, "NCB");
+                    comprobantes_N.insertarUnoVtas(ConexionEquipo, "NCA");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El parametro VTAPUNTO se encuentra vacio , no se encuentra la sucursal anterior");
+            }
+
 
         }
     }

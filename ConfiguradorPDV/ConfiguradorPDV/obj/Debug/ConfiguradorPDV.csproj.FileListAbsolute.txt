@@ -36,3 +36,10 @@ C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmMP.resources
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmSQL.resources
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmConfiguracionExtra.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmCF.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmConfiguracionExtra.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmFactura.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmMail.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmMP.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmPDV.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FrmSQL.resources

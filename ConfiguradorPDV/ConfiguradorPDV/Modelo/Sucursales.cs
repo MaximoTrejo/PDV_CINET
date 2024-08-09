@@ -28,7 +28,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"SELECT distinct (suc_codigo) FROM {ConexionEquipo}.sucursales  WHERE suc_codigo = @dep_codigo ";
+            string query = $"SELECT distinct (suc_codigo) FROM {ConexionEquipo}.sucursales  WHERE suc_codigo = @suc_codigo ";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
             comando.Parameters.AddWithValue("@suc_codigo", _suc_codigo);
@@ -37,7 +37,7 @@ namespace ConfiguradorPDV.Modelo
 
             if (reader.Read())
             {
-                exito = reader["dep_codigo"].ToString();
+                exito = reader["suc_codigo"].ToString();
             }
 
             reader.Close();
@@ -57,16 +57,19 @@ namespace ConfiguradorPDV.Modelo
                      (
                          [SUC_CODIGO]
                         ,[SUC_MANUAL]
+                        ,[SUC_LOCAL]
                     )
                  VALUES 
                      (
                          @suc_codigo,
                          @suc_manual,
+                         @suc_local
                      )";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(query);
                 comando.Parameters.AddWithValue("@suc_codigo", _suc_codigo);
                 comando.Parameters.AddWithValue("@suc_manual", _suc_manual);
+                comando.Parameters.AddWithValue("@suc_local", "S");
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)

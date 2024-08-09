@@ -61,15 +61,16 @@ namespace ConfiguradorPDV.Modelo
                 string query = $@"
                  INSERT INTO {ConexionEquipo}.cbte_ingresos_n
                      (
-                      [CBTEEG_CODIGO]
-                     ,[ETAL_CODIGO]
-                     ,[CBTEEGSUC_CODIGO]
-                     ,[CBTEEGN_NUMERO]
-                     ,[CBTEEGN_REPORTE]
-                     ,[CBTEEGN_IMPRESORA]
-                     ,[CBTEEGN_NUMERAENCOD]
-                     ,[CBTEEGN_COPIAS]
-                     )
+                      [CBTEIN_CODIGO]
+                     ,[ITAL_CODIGO]
+                     ,[CBTEINSUC_CODIGO]
+                     ,[CBTEINN_NUMERO]
+                     ,[CBTEINN_REPORTE]
+                     ,[CBTEINN_IMPRESORA]
+                     ,[CBTEINN_NUMERAENCOD]
+                     ,[CBTEINN_COPIAS]
+                     ,[CBTEINN_MODO]
+                    )
                  VALUES 
                      (
                          @cbtein_codigo,
@@ -80,7 +81,7 @@ namespace ConfiguradorPDV.Modelo
                          @cbteinn_impresora,
                          @cbteinn_numeraencod,
                          @cbteinn_copias,
-                         @cbteinn_modo,
+                         @cbteinn_modo
                      )";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(query);

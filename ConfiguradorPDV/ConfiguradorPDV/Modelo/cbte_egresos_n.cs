@@ -74,7 +74,7 @@ namespace ConfiguradorPDV.Modelo
                          @cbteegn_reporte,
                          @cbteegn_imopresora,
                          @cbteegn_numeroencod,
-                         @cbteegn_copias,
+                         @cbteegn_copias
                      )";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(query);

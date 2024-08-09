@@ -27,7 +27,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"SELECT distinct (cbteinsuc_codigo) FROM {ConexionEquipo}.cbtein_sucursal  WHERE cbteinsuc_codigo = @cbteinsuc_codigo and cbtein_codigo = @cbtein_codigo";
+            string query = $"SELECT distinct (cbteinsuc_codigo) FROM {ConexionEquipo}.cbtein_sucursal  WHERE cbteinsuc_codigo = @cbteinsuc_codigo";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
             comando.Parameters.AddWithValue("@cbteinsuc_codigo", _cbteinsuc_codigo);

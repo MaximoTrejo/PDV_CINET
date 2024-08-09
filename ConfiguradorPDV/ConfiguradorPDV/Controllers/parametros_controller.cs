@@ -31,6 +31,13 @@ namespace ConfiguradorPDV.Controllers
             return exito;
         }
 
+        public void eliminarParametro(string parametro)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            Parametros parametros = new Parametros(_conexion, parametro);
+            parametros.eliminarUno(ConexionEquipo);
+        }
+
         public void modificarParametros(string parametro , string descrpcion,string valor)
         {
             

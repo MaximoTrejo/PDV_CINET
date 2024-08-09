@@ -22,14 +22,15 @@ namespace ConfiguradorPDV
         periodos_controller periodos_;
         depositos_controller depositos_;
         sucursales_controller sucursales_;
-
-
+        dataBase_controllers dataBase_Controllers_;
+        clientes_controller clientes_;
         cbtein_sucursal_controller cbtein_Sucursal_;
         cbte_ingresos_n_controller cbte_Ingresos_N_;
         cbteeg_sucursal_controller cbteeg_Sucursal_;
         cbte_egresos_n_controller cbte_Egresos_N_;
         asientos_e_controller asientos_E_;
         comprobantes_n_controller comprobantes_N_;
+        comprobantes_e_controller comprobantes_E_;
 
         LinkedServer linkedServer_;
         public FrmPDV(Factory factory,LinkedServer linked)
@@ -37,19 +38,19 @@ namespace ConfiguradorPDV
             this.factory = factory;
             linkedServer_ = linked;
             sucursales_ = new sucursales_controller(factory, linked);
-
+            clientes_ = new clientes_controller(factory, linked);
             cbtein_Sucursal_ = new cbtein_sucursal_controller(factory, linked);
             cbte_Ingresos_N_ = new cbte_ingresos_n_controller(factory, linked);
             cbteeg_Sucursal_ = new cbteeg_sucursal_controller(factory, linked);
             cbte_Egresos_N_ = new cbte_egresos_n_controller(factory, linked);
             asientos_E_ = new asientos_e_controller(factory, linked);
             comprobantes_N_ = new comprobantes_n_controller(factory, linked);
-
+            dataBase_Controllers_ = new dataBase_controllers(factory, linked);
             periodos_ = new periodos_controller(factory, linked);
             depositos_ = new depositos_controller(factory, linked);
             asientos_ = new asientos_e_controller(factory, linked);
             parametros_ = new parametros_controller(factory ,linked);
-
+            comprobantes_E_= new comprobantes_e_controller(factory, linked);
             InitializeComponent();
         }
 
@@ -138,19 +139,78 @@ namespace ConfiguradorPDV
                 cbte_Egresos_N_.insertarEgreso(sucursalFiscal);
                 asientos_E_.insertarAsiento(nomLocal,sucursalFiscal);
                 comprobantes_N_.modificarComprobantes(sucursalFiscal, 2);
-
                 parametros_.modificarParametros("VTAPUNTO","Sucursal",sucursalFiscal);
                 parametros_.modificarParametros("MODOFE", "ActivaFE", sucursalFiscal);
                 parametros_.modificarParametros("CDEFSUC", "", sucursalFiscal);
                 parametros_.modificarParametros("PTOVTAFIS","",sucursalFiscal);
                 parametros_.modificarParametros("MANFE","","S");
-
+                dataBase_Controllers_.ReorganizarCierre();
+                clientes_.modificarClientes(sucursalFiscal);
             }
             else
             {
-                sucursales_.modificarSucursal(sucursalFiscal,1);
+                sucursales_.modificarSucursal(sucursalFiscal, 0);
+                cbtein_Sucursal_.modificarCbteinSuc(sucursalFiscal);
+                cbte_Ingresos_N_.modificarCbteIngresos(sucursalFiscal);
+                cbteeg_Sucursal_.modificarCbteegSucursal(sucursalFiscal);
+                cbte_Egresos_N_.insertarEgreso(sucursalFiscal);
+                asientos_E_.insertarAsiento(nomLocal, sucursalFiscal);
+                comprobantes_N_.modificarComprobantes(sucursalFiscal, 0);
+                parametros_.modificarParametros("VTAPUNTO", "Sucursal", sucursalFiscal);
+                parametros_.modificarParametros("MODOFE", "ActivaFE", sucursalFiscal);
+                parametros_.modificarParametros("CDEFSUC", "", sucursalFiscal);
+                parametros_.modificarParametros("PTOVTAFIS", "", sucursalFiscal);
+                parametros_.modificarParametros("MANFE", "", "S");
+                dataBase_Controllers_.ReorganizarCierre();
+                clientes_.modificarClientes(sucursalFiscal);
             }
 
+        }
+
+        private void btnPDVManual_Click(object sender, EventArgs e)
+        {
+            string sucursalManual = tbxPDVManual.Text;
+
+            sucursales_.modificarSucursal(sucursalManual, 0);
+            cbtein_Sucursal_.modificarCbteinSuc(sucursalManual);
+            cbte_Ingresos_N_.modificarCbteIngresos(sucursalManual);
+            cbteeg_Sucursal_.modificarCbteegSucursal(sucursalManual);
+            cbte_Egresos_N_.insertarEgreso(sucursalManual);
+            comprobantes_N_.modificarComprobantesManuales(sucursalManual);
+            parametros_.modificarParametros("PTOVTAMAN", "SucursalManual", sucursalManual);
+            parametros_.modificarParametros("APCAJON", "", "N");
+            parametros_.modificarParametros("USACOMMANU", "","N");
+
+        }
+
+        private void btnTFacturacion_Click(object sender, EventArgs e)
+        {
+            string TipoFac = cbxTipoFac.Text;
+            string pdvFiscal = tbxPDV.Text;
+
+            if (TipoFac =="FE") 
+            {
+                sucursales_.modificarSucursal(pdvFiscal, 2);
+                comprobantes_E_.modificarCodigoComprobantes(TipoFac);
+                comprobantes_N_.modificarComprobantes(pdvFiscal,2);
+                parametros_.modificarParametros("USAFEWS", "", "S");
+                parametros_.modificarParametros("USAFEX", "", "S");
+                parametros_.modificarParametros("modofe", "", "S");
+                parametros_.modificarParametros("MANFE","","S");
+                parametros_.modificarParametros("MODOFE", "", "S");
+                parametros_.eliminarParametro("CIECAJFIS");
+            }
+            else
+            {
+                sucursales_.modificarSucursal(pdvFiscal, 0);
+                comprobantes_E_.modificarCodigoComprobantes(TipoFac);
+                comprobantes_N_.modificarComprobantes(pdvFiscal, 0);
+                parametros_.modificarParametros("USAFEWS", "", "N");
+                parametros_.modificarParametros("USAFEX", "", "N");
+                parametros_.modificarParametros("CIECAJFIS","","S");
+                parametros_.modificarParametros("MANFE", "", "N");
+                parametros_.modificarParametros("MODOFE", "", "N");
+            }
         }
     }
 }

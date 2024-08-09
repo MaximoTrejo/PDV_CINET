@@ -233,6 +233,7 @@
             this.btnPDVManual.TabIndex = 18;
             this.btnPDVManual.Text = "Configurar";
             this.btnPDVManual.UseVisualStyleBackColor = true;
+            this.btnPDVManual.Click += new System.EventHandler(this.btnPDVManual_Click);
             // 
             // btnPDV
             // 
@@ -262,6 +263,7 @@
             this.btnTFacturacion.TabIndex = 15;
             this.btnTFacturacion.Text = "Configurar";
             this.btnTFacturacion.UseVisualStyleBackColor = true;
+            this.btnTFacturacion.Click += new System.EventHandler(this.btnTFacturacion_Click);
             // 
             // btnCuit
             // 

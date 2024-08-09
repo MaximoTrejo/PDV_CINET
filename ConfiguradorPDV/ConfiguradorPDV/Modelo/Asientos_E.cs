@@ -34,7 +34,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"SELECT distinct (PERI_CODIGO) FROM {ConexionEquipo}.asientos_E  WHERE peri_codigo = @peri_codigo and suc_codigo = @suc_codigo and asi_numero = '0' ";
+            string query = $"SELECT distinct (PERI_CODIGO) FROM {ConexionEquipo}.asientos_E  WHERE peri_codigo = @peri_codigo";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
             comando.Parameters.AddWithValue("@peri_codigo", _peri_codigo);

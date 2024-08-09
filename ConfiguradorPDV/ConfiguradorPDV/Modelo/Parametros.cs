@@ -87,5 +87,21 @@ namespace ConfiguradorPDV.Modelo
                 MessageBox.Show("Error al insertar el parámetro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void eliminarUno(string ConexionEquipo)
+        {
+            try
+            {
+                AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+                string query = $"delete {ConexionEquipo}.parametros where para_codigo = @parametro";
+                SqlCommand comando = accesoDatos.PrepararConsulta(query);
+                comando.Parameters.AddWithValue("@parametro", _para_codigo);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el parámetro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
