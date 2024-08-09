@@ -13,41 +13,19 @@ namespace ConfiguradorPDV.Modelo
     {
         Factory _conexion;
         string _peri_codigo;
-        decimal _asi_numero;
-        string _tipoasi_codigo;
-        string _asi_leyenda;
-        DateTime _asi_fecha;
-        short _asi_numerocierre;
         string _suc_codigo;
-        decimal _asi_cierrecaja;
-        decimal _asi_cotiz;
-        string _cco_codigo;
 
-        public Asientos_E(
+        public Asientos_E
+        (
 
             Factory conexion,
             string peri_codigo = null,
-            decimal asi_numero = 0,
-            string tipoasi_codigo = null,
-            string asi_leyenda = null,
-            DateTime asi_fecha = default(DateTime),
-            short asi_numerocierre = 0,
-            string suc_codigo = null,
-            decimal asi_cierrecaja = 0,
-            decimal asi_cotiz = 0,
-            string cco_codigo = null)
+            string suc_codigo = null
+        )
         {
             _conexion = conexion;
             _peri_codigo = peri_codigo;
-            _asi_numero = asi_numero;
-            _tipoasi_codigo = tipoasi_codigo;
-            _asi_leyenda = asi_leyenda;
-            _asi_fecha = asi_fecha;
-            _asi_numerocierre = asi_numerocierre;
             _suc_codigo = suc_codigo;
-            _asi_cierrecaja = asi_cierrecaja;
-            _asi_cotiz = asi_cotiz;
-            _cco_codigo = cco_codigo;
         }
 
         public string BuscarUno(string ConexionEquipo)

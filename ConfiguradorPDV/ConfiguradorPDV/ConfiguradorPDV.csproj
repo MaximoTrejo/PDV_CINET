@@ -48,10 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\asientos_e_controller.cs" />
+    <Compile Include="Controllers\cbteeg_sucursal_controller.cs" />
+    <Compile Include="Controllers\cbtein_sucursal_controller.cs" />
+    <Compile Include="Controllers\cbte_egresos_n_controller.cs" />
+    <Compile Include="Controllers\cbte_ingresos_n_controller.cs" />
+    <Compile Include="Controllers\comprobantes_n_controller.cs" />
     <Compile Include="Controllers\depositos_controller.cs" />
     <Compile Include="Controllers\master_controller.cs" />
     <Compile Include="Controllers\parametros_controller.cs" />
     <Compile Include="Controllers\periodos_controller.cs" />
+    <Compile Include="Controllers\sucursales_controller.cs" />
     <Compile Include="DB\AccesoDatos.cs" />
     <Compile Include="DB\Factory.cs" />
     <Compile Include="DB\LinkedServer.cs" />
@@ -104,9 +110,15 @@
       <DependentUpon>FrmSQL.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Asientos_E.cs" />
+    <Compile Include="Modelo\cbteeg_sucursal.cs" />
+    <Compile Include="Modelo\cbtein_sucursal.cs" />
+    <Compile Include="Modelo\cbte_egresos_n.cs" />
+    <Compile Include="Modelo\cbte_ingresos_n.cs" />
+    <Compile Include="Modelo\comprobantes_n.cs" />
     <Compile Include="Modelo\Depositos.cs" />
     <Compile Include="Modelo\Parametros.cs" />
     <Compile Include="Modelo\Periodos.cs" />
+    <Compile Include="Modelo\Sucursales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -242,6 +242,7 @@
             this.btnPDV.TabIndex = 17;
             this.btnPDV.Text = "Configurar";
             this.btnPDV.UseVisualStyleBackColor = true;
+            this.btnPDV.Click += new System.EventHandler(this.btnPDV_Click);
             // 
             // btnCodLocal
             // 

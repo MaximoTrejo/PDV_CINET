@@ -25,7 +25,7 @@ namespace ConfiguradorPDV.Controllers
 
             string ConexionEquipo = _equipo.VerificarLinkedServer();
 
-            Asientos_E asientos = new Asientos_E(_conexion ,asiento , suc_codigo:sucursal );
+            Asientos_E asientos = new Asientos_E(_conexion ,asiento , sucursal );
 
             string existe = asientos.BuscarUno(ConexionEquipo);
 
