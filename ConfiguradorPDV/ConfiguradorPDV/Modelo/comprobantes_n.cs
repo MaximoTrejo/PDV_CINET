@@ -49,7 +49,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = '' , suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas' ";
+            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = '' , suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo_anterior and CBTEE_MODULO = 'vtas' ";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
 
@@ -63,7 +63,7 @@ namespace ConfiguradorPDV.Modelo
 
             AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
-            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = 'CF', suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo and CBTEE_MODULO = 'vtas'";
+            string query = $"Update {ConexionEquipo}.comprobantes_n set CBTEN_IMPRESORA = 'CF', suc_codigo =@suc_codigo  WHERE  suc_codigo = @suc_codigo_anterior and CBTEE_MODULO = 'vtas'";
 
             SqlCommand comando = accesoDatos.PrepararConsulta(query);
 

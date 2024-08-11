@@ -34,7 +34,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbxCuitEmpresa = new System.Windows.Forms.TextBox();
             this.tbxRazonSocial = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEFactura = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxTelefono = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.Factura.Controls.Add(this.label8);
             this.Factura.Controls.Add(this.tbxCuitEmpresa);
             this.Factura.Controls.Add(this.tbxRazonSocial);
-            this.Factura.Controls.Add(this.button6);
+            this.Factura.Controls.Add(this.btnEFactura);
             this.Factura.Controls.Add(this.label4);
             this.Factura.Controls.Add(this.label3);
             this.Factura.Controls.Add(this.tbxTelefono);
@@ -100,14 +100,15 @@
             this.tbxRazonSocial.Size = new System.Drawing.Size(84, 20);
             this.tbxRazonSocial.TabIndex = 33;
             // 
-            // button6
+            // btnEFactura
             // 
-            this.button6.Location = new System.Drawing.Point(224, 94);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Configurar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEFactura.Location = new System.Drawing.Point(224, 94);
+            this.btnEFactura.Name = "btnEFactura";
+            this.btnEFactura.Size = new System.Drawing.Size(75, 23);
+            this.btnEFactura.TabIndex = 30;
+            this.btnEFactura.Text = "Configurar";
+            this.btnEFactura.UseVisualStyleBackColor = true;
+            this.btnEFactura.Click += new System.EventHandler(this.btnEFactura_Click);
             // 
             // label4
             // 
@@ -175,7 +176,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbxCuitEmpresa;
         private System.Windows.Forms.TextBox tbxRazonSocial;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEFactura;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxTelefono;

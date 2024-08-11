@@ -31,11 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxUsaFacturaM = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.brnUsaTComanda = new System.Windows.Forms.Button();
+            this.btnNomImpresora = new System.Windows.Forms.Button();
+            this.btnUsaTurno = new System.Windows.Forms.Button();
             this.cbxUsaTurno = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNomEmpresa = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbxMonotributista = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,11 +54,11 @@
             // 
             this.groupBox1.Controls.Add(this.cbxUsaFacturaM);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.brnUsaTComanda);
+            this.groupBox1.Controls.Add(this.btnNomImpresora);
+            this.groupBox1.Controls.Add(this.btnUsaTurno);
             this.groupBox1.Controls.Add(this.cbxUsaTurno);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnNomEmpresa);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbxMonotributista);
             this.groupBox1.Controls.Add(this.label5);
@@ -84,6 +84,7 @@
             this.cbxUsaFacturaM.Name = "cbxUsaFacturaM";
             this.cbxUsaFacturaM.Size = new System.Drawing.Size(93, 21);
             this.cbxUsaFacturaM.TabIndex = 49;
+            this.cbxUsaFacturaM.Text = "NOUSAR";
             // 
             // button5
             // 
@@ -94,32 +95,35 @@
             this.button5.Text = "Configurar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // brnUsaTComanda
             // 
-            this.button4.Location = new System.Drawing.Point(125, 160);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Configurar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.brnUsaTComanda.Location = new System.Drawing.Point(125, 160);
+            this.brnUsaTComanda.Name = "brnUsaTComanda";
+            this.brnUsaTComanda.Size = new System.Drawing.Size(75, 23);
+            this.brnUsaTComanda.TabIndex = 47;
+            this.brnUsaTComanda.Text = "Configurar";
+            this.brnUsaTComanda.UseVisualStyleBackColor = true;
+            this.brnUsaTComanda.Click += new System.EventHandler(this.brnUsaTComanda_Click);
             // 
-            // button3
+            // btnNomImpresora
             // 
-            this.button3.Location = new System.Drawing.Point(123, 72);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Configurar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNomImpresora.Location = new System.Drawing.Point(123, 72);
+            this.btnNomImpresora.Name = "btnNomImpresora";
+            this.btnNomImpresora.Size = new System.Drawing.Size(75, 23);
+            this.btnNomImpresora.TabIndex = 46;
+            this.btnNomImpresora.Text = "Configurar";
+            this.btnNomImpresora.UseVisualStyleBackColor = true;
+            this.btnNomImpresora.Click += new System.EventHandler(this.btnNomImpresora_Click);
             // 
-            // button2
+            // btnUsaTurno
             // 
-            this.button2.Location = new System.Drawing.Point(6, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Configurar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUsaTurno.Location = new System.Drawing.Point(6, 160);
+            this.btnUsaTurno.Name = "btnUsaTurno";
+            this.btnUsaTurno.Size = new System.Drawing.Size(75, 23);
+            this.btnUsaTurno.TabIndex = 45;
+            this.btnUsaTurno.Text = "Configurar";
+            this.btnUsaTurno.UseVisualStyleBackColor = true;
+            this.btnUsaTurno.Click += new System.EventHandler(this.btnUsaTurno_Click);
             // 
             // cbxUsaTurno
             // 
@@ -129,14 +133,15 @@
             this.cbxUsaTurno.Size = new System.Drawing.Size(84, 21);
             this.cbxUsaTurno.TabIndex = 44;
             // 
-            // button1
+            // btnNomEmpresa
             // 
-            this.button1.Location = new System.Drawing.Point(6, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Configurar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNomEmpresa.Location = new System.Drawing.Point(6, 72);
+            this.btnNomEmpresa.Name = "btnNomEmpresa";
+            this.btnNomEmpresa.Size = new System.Drawing.Size(75, 23);
+            this.btnNomEmpresa.TabIndex = 43;
+            this.btnNomEmpresa.Text = "Configurar";
+            this.btnNomEmpresa.UseVisualStyleBackColor = true;
+            this.btnNomEmpresa.Click += new System.EventHandler(this.btnNomEmpresa_Click);
             // 
             // label6
             // 
@@ -154,6 +159,7 @@
             this.cbxMonotributista.Name = "cbxMonotributista";
             this.cbxMonotributista.Size = new System.Drawing.Size(84, 21);
             this.cbxMonotributista.TabIndex = 41;
+            this.cbxMonotributista.Text = "NOUSAR";
             // 
             // label5
             // 
@@ -260,12 +266,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUsaTurno;
         private System.Windows.Forms.ComboBox cbxUsaTurno;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNomEmpresa;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button brnUsaTComanda;
+        private System.Windows.Forms.Button btnNomImpresora;
         private System.Windows.Forms.ComboBox cbxUsaFacturaM;
     }
 }

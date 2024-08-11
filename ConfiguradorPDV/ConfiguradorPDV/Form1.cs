@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ConfiguradorPDV.DB;
 using ConfiguradorPDV.Controllers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using ConfiguradorPDV.FormularioBackoffice;
 
 namespace ConfiguradorPDV
 {
@@ -120,6 +121,14 @@ namespace ConfiguradorPDV
                 dgvEquipos.Enabled = false;
                 dgvEquipos.CurrentCell = null;
             }
+        }
+
+        private void btnVerBackoffice_Click(object sender, EventArgs e)
+        {
+            LinkedServer linkedServer = new LinkedServer();
+
+            FrmBACKOFFICE frmBACKOFFICE = new FrmBACKOFFICE(factory,linkedServer);
+            frmBACKOFFICE.Show();
         }
     }
 }

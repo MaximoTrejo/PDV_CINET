@@ -2,6 +2,7 @@
 using ConfiguradorPDV.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,6 @@ namespace ConfiguradorPDV.Controllers
 
         public void modificarSucursal(string pdv, int tipo)
         {
-
             string ConexionEquipo = _equipo.VerificarLinkedServer();
 
             Sucursales sucursal = new Sucursales(_conexion, pdv, tipo);
@@ -47,5 +47,28 @@ namespace ConfiguradorPDV.Controllers
             }
 
         }
+
+
+        public void modificarSucursalesInactivas()
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+            string query = $@"
+                            update {ConexionEquipo}.SUCURSALES 
+                            set SUC_MANUAL = '0'
+                            where suc_codigo not in 
+                            (SELECT para_valor
+                                FROM PARAMETROS
+                                WHERE para_codigo IN ('vtapunto', 'PTOVTAMAN'))
+                            ";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.ExecuteNonQuery();
+
+        }
+
     }
 }

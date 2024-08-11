@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnClientSecret = new System.Windows.Forms.Button();
             this.tbxClientSecret = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnClientID = new System.Windows.Forms.Button();
+            this.btnToken = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tbxClientID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbxToken = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExternalId = new System.Windows.Forms.Button();
+            this.btnMediaPorcion = new System.Windows.Forms.Button();
+            this.btnUsaCashout = new System.Windows.Forms.Button();
+            this.btnUsaMP = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxUsaPorcion = new System.Windows.Forms.ComboBox();
             this.cbxUsaCashout = new System.Windows.Forms.ComboBox();
@@ -55,19 +55,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.btnClientSecret);
             this.groupBox1.Controls.Add(this.tbxClientSecret);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnClientID);
+            this.groupBox1.Controls.Add(this.btnToken);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbxClientID);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.tbxToken);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnExternalId);
+            this.groupBox1.Controls.Add(this.btnMediaPorcion);
+            this.groupBox1.Controls.Add(this.btnUsaCashout);
+            this.groupBox1.Controls.Add(this.btnUsaMP);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbxUsaPorcion);
             this.groupBox1.Controls.Add(this.cbxUsaCashout);
@@ -83,14 +83,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mercado Pago";
             // 
-            // button7
+            // btnClientSecret
             // 
-            this.button7.Location = new System.Drawing.Point(322, 329);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Configurar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnClientSecret.Location = new System.Drawing.Point(322, 329);
+            this.btnClientSecret.Name = "btnClientSecret";
+            this.btnClientSecret.Size = new System.Drawing.Size(75, 23);
+            this.btnClientSecret.TabIndex = 32;
+            this.btnClientSecret.Text = "Configurar";
+            this.btnClientSecret.UseVisualStyleBackColor = true;
+            this.btnClientSecret.Click += new System.EventHandler(this.btnClientSecret_Click);
             // 
             // tbxClientSecret
             // 
@@ -99,23 +100,25 @@
             this.tbxClientSecret.Size = new System.Drawing.Size(297, 20);
             this.tbxClientSecret.TabIndex = 31;
             // 
-            // button6
+            // btnClientID
             // 
-            this.button6.Location = new System.Drawing.Point(322, 266);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Configurar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnClientID.Location = new System.Drawing.Point(322, 266);
+            this.btnClientID.Name = "btnClientID";
+            this.btnClientID.Size = new System.Drawing.Size(75, 23);
+            this.btnClientID.TabIndex = 30;
+            this.btnClientID.Text = "Configurar";
+            this.btnClientID.UseVisualStyleBackColor = true;
+            this.btnClientID.Click += new System.EventHandler(this.btnClientID_Click);
             // 
-            // button5
+            // btnToken
             // 
-            this.button5.Location = new System.Drawing.Point(322, 203);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "Configurar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnToken.Location = new System.Drawing.Point(322, 203);
+            this.btnToken.Name = "btnToken";
+            this.btnToken.Size = new System.Drawing.Size(75, 23);
+            this.btnToken.TabIndex = 29;
+            this.btnToken.Text = "Configurar";
+            this.btnToken.UseVisualStyleBackColor = true;
+            this.btnToken.Click += new System.EventHandler(this.btnToken_Click);
             // 
             // label7
             // 
@@ -158,41 +161,45 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Acceso Token";
             // 
-            // button4
+            // btnExternalId
             // 
-            this.button4.Location = new System.Drawing.Point(6, 150);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Configurar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnExternalId.Location = new System.Drawing.Point(6, 150);
+            this.btnExternalId.Name = "btnExternalId";
+            this.btnExternalId.Size = new System.Drawing.Size(75, 23);
+            this.btnExternalId.TabIndex = 23;
+            this.btnExternalId.Text = "Configurar";
+            this.btnExternalId.UseVisualStyleBackColor = true;
+            this.btnExternalId.Click += new System.EventHandler(this.btnExternalId_Click);
             // 
-            // button3
+            // btnMediaPorcion
             // 
-            this.button3.Location = new System.Drawing.Point(273, 69);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Configurar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMediaPorcion.Location = new System.Drawing.Point(273, 69);
+            this.btnMediaPorcion.Name = "btnMediaPorcion";
+            this.btnMediaPorcion.Size = new System.Drawing.Size(75, 23);
+            this.btnMediaPorcion.TabIndex = 22;
+            this.btnMediaPorcion.Text = "Configurar";
+            this.btnMediaPorcion.UseVisualStyleBackColor = true;
+            this.btnMediaPorcion.Click += new System.EventHandler(this.btnMediaPorcion_Click);
             // 
-            // button2
+            // btnUsaCashout
             // 
-            this.button2.Location = new System.Drawing.Point(138, 69);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Configurar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUsaCashout.Location = new System.Drawing.Point(138, 69);
+            this.btnUsaCashout.Name = "btnUsaCashout";
+            this.btnUsaCashout.Size = new System.Drawing.Size(75, 23);
+            this.btnUsaCashout.TabIndex = 21;
+            this.btnUsaCashout.Text = "Configurar";
+            this.btnUsaCashout.UseVisualStyleBackColor = true;
+            this.btnUsaCashout.Click += new System.EventHandler(this.btnUsaCashout_Click);
             // 
-            // button1
+            // btnUsaMP
             // 
-            this.button1.Location = new System.Drawing.Point(6, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Configurar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUsaMP.Location = new System.Drawing.Point(6, 69);
+            this.btnUsaMP.Name = "btnUsaMP";
+            this.btnUsaMP.Size = new System.Drawing.Size(75, 23);
+            this.btnUsaMP.TabIndex = 20;
+            this.btnUsaMP.Text = "Configurar";
+            this.btnUsaMP.UseVisualStyleBackColor = true;
+            this.btnUsaMP.Click += new System.EventHandler(this.btnUsaMP_Click);
             // 
             // label4
             // 
@@ -287,18 +294,18 @@
         private System.Windows.Forms.ComboBox cbxUsaCashout;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxUsaMP;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnUsaMP;
+        private System.Windows.Forms.Button btnClientSecret;
         private System.Windows.Forms.TextBox tbxClientSecret;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnClientID;
+        private System.Windows.Forms.Button btnToken;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbxClientID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbxToken;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExternalId;
+        private System.Windows.Forms.Button btnMediaPorcion;
+        private System.Windows.Forms.Button btnUsaCashout;
     }
 }

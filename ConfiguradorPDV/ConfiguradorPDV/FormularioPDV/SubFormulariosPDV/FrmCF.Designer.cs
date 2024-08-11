@@ -73,6 +73,7 @@
             this.btnIpHasar.TabIndex = 47;
             this.btnIpHasar.Text = "Configurar";
             this.btnIpHasar.UseVisualStyleBackColor = true;
+            this.btnIpHasar.Click += new System.EventHandler(this.btnIpHasar_Click);
             // 
             // tbxPuertoFiscal
             // 
@@ -89,6 +90,7 @@
             this.tbxPuertoF.TabIndex = 45;
             this.tbxPuertoF.Text = "Configurar";
             this.tbxPuertoF.UseVisualStyleBackColor = true;
+            this.tbxPuertoF.Click += new System.EventHandler(this.tbxPuertoF_Click);
             // 
             // btnModeloCF
             // 
@@ -98,6 +100,7 @@
             this.btnModeloCF.TabIndex = 44;
             this.btnModeloCF.Text = "Configurar";
             this.btnModeloCF.UseVisualStyleBackColor = true;
+            this.btnModeloCF.Click += new System.EventHandler(this.btnModeloCF_Click);
             // 
             // label6
             // 
@@ -138,6 +141,7 @@
             this.btnUsaHasar.TabIndex = 30;
             this.btnUsaHasar.Text = "Configurar";
             this.btnUsaHasar.UseVisualStyleBackColor = true;
+            this.btnUsaHasar.Click += new System.EventHandler(this.btnUsaHasar_Click);
             // 
             // label4
             // 

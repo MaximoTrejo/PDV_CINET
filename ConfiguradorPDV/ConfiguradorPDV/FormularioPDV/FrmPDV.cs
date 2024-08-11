@@ -31,7 +31,6 @@ namespace ConfiguradorPDV
         asientos_e_controller asientos_E_;
         comprobantes_n_controller comprobantes_N_;
         comprobantes_e_controller comprobantes_E_;
-
         LinkedServer linkedServer_;
         public FrmPDV(Factory factory,LinkedServer linked)
         {
@@ -56,13 +55,17 @@ namespace ConfiguradorPDV
 
         private void FrmPDV_Load(object sender, EventArgs e)
         {
-
+            List<string> opcionesFECF = new List<string> { "FE", "CF" };
+            cbxTipoFac.Items.AddRange(opcionesFECF.ToArray());
+            //traer parametros
             tbxCuit.Text = parametros_.TraerValorParametro("CUIT");
             tbxPDV.Text = parametros_.TraerValorParametro("VTAPUNTO");
             tbxPDVManual.Text = parametros_.TraerValorParametro("PTOVTAMAN");
             tbxNumCaj.Text = parametros_.TraerValorParametro("NUMCAJA");
             cbxTipoFac.Text  = parametros_.TraerValorParametro("MODOFE") == "S" ? "FE" : "CF";
             tbxCodLocal.Text = parametros_.TraerValorParametro("NOMLOCAL");
+            //cambiar titulo formulario
+            this.Text = "FrmPDV " + linkedServer_._equipo + linkedServer_._puerto;
         }
 
         private void btnMP_Click(object sender, EventArgs e)
@@ -117,8 +120,12 @@ namespace ConfiguradorPDV
         {
             string codigoLocal = tbxCodLocal.Text;
             string sucursal = tbxPDV.Text;
-            asientos_.insertarAsiento(codigoLocal, sucursal);
-            periodos_.insertarPeriodo(codigoLocal);
+            string numeroCaja = tbxNumCaj.Text;
+
+            string codigo = codigoLocal + numeroCaja;
+
+            asientos_.insertarAsiento(codigo, sucursal);
+            periodos_.insertarPeriodo(codigo);
             depositos_.insertarDeposito(codigoLocal, sucursal);
             parametros_.modificarParametros("NOMLOCAL","CodigoLocal",codigoLocal);
             parametros_.modificarParametros("VTADEPOS", "DepositoVenta", codigoLocal);
@@ -140,12 +147,13 @@ namespace ConfiguradorPDV
                 asientos_E_.insertarAsiento(nomLocal,sucursalFiscal);
                 comprobantes_N_.modificarComprobantes(sucursalFiscal, 2);
                 parametros_.modificarParametros("VTAPUNTO","Sucursal",sucursalFiscal);
-                parametros_.modificarParametros("MODOFE", "ActivaFE", sucursalFiscal);
+                parametros_.modificarParametros("MODOFE", "ActivaFE", "S");
                 parametros_.modificarParametros("CDEFSUC", "", sucursalFiscal);
                 parametros_.modificarParametros("PTOVTAFIS","",sucursalFiscal);
                 parametros_.modificarParametros("MANFE","","S");
                 dataBase_Controllers_.ReorganizarCierre();
                 clientes_.modificarClientes(sucursalFiscal);
+                sucursales_.modificarSucursalesInactivas();
             }
             else
             {
@@ -157,12 +165,13 @@ namespace ConfiguradorPDV
                 asientos_E_.insertarAsiento(nomLocal, sucursalFiscal);
                 comprobantes_N_.modificarComprobantes(sucursalFiscal, 0);
                 parametros_.modificarParametros("VTAPUNTO", "Sucursal", sucursalFiscal);
-                parametros_.modificarParametros("MODOFE", "ActivaFE", sucursalFiscal);
+                parametros_.modificarParametros("MODOFE", "ActivaFE", "N");
                 parametros_.modificarParametros("CDEFSUC", "", sucursalFiscal);
                 parametros_.modificarParametros("PTOVTAFIS", "", sucursalFiscal);
                 parametros_.modificarParametros("MANFE", "", "S");
                 dataBase_Controllers_.ReorganizarCierre();
                 clientes_.modificarClientes(sucursalFiscal);
+                sucursales_.modificarSucursalesInactivas();
             }
 
         }
@@ -171,7 +180,7 @@ namespace ConfiguradorPDV
         {
             string sucursalManual = tbxPDVManual.Text;
 
-            sucursales_.modificarSucursal(sucursalManual, 0);
+            sucursales_.modificarSucursal(sucursalManual,1);
             cbtein_Sucursal_.modificarCbteinSuc(sucursalManual);
             cbte_Ingresos_N_.modificarCbteIngresos(sucursalManual);
             cbteeg_Sucursal_.modificarCbteegSucursal(sucursalManual);
@@ -180,6 +189,7 @@ namespace ConfiguradorPDV
             parametros_.modificarParametros("PTOVTAMAN", "SucursalManual", sucursalManual);
             parametros_.modificarParametros("APCAJON", "", "N");
             parametros_.modificarParametros("USACOMMANU", "","N");
+            sucursales_.modificarSucursalesInactivas();
 
         }
 
@@ -195,7 +205,6 @@ namespace ConfiguradorPDV
                 comprobantes_N_.modificarComprobantes(pdvFiscal,2);
                 parametros_.modificarParametros("USAFEWS", "", "S");
                 parametros_.modificarParametros("USAFEX", "", "S");
-                parametros_.modificarParametros("modofe", "", "S");
                 parametros_.modificarParametros("MANFE","","S");
                 parametros_.modificarParametros("MODOFE", "", "S");
                 parametros_.eliminarParametro("CIECAJFIS");

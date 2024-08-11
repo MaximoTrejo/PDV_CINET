@@ -13,6 +13,22 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\maxim\OneDrive\Escritorio\PDV\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +48,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>568CCD29F730C8650A18AA93BEB873170A63A4D3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ConfiguradorPDV_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,6 +84,7 @@
     <Compile Include="Controllers\comprobantes_e_controller.cs" />
     <Compile Include="Controllers\comprobantes_n_controller.cs" />
     <Compile Include="Controllers\dataBase_controllers.cs" />
+    <Compile Include="Controllers\datos_empresa_controller.cs" />
     <Compile Include="Controllers\depositos_controller.cs" />
     <Compile Include="Controllers\master_controller.cs" />
     <Compile Include="Controllers\parametros_controller.cs" />
@@ -69,6 +98,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBackoffice\FrmBACKOFFICE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBackoffice\FrmBACKOFFICE.Designer.cs">
+      <DependentUpon>FrmBACKOFFICE.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioPDV\SubFormulariosPDV\FrmCF.cs">
       <SubType>Form</SubType>
@@ -120,6 +155,7 @@
     <Compile Include="Modelo\clientes.cs" />
     <Compile Include="Modelo\comprobantes_e.cs" />
     <Compile Include="Modelo\comprobantes_n.cs" />
+    <Compile Include="Modelo\datos_empresa.cs" />
     <Compile Include="Modelo\Depositos.cs" />
     <Compile Include="Modelo\Parametros.cs" />
     <Compile Include="Modelo\Periodos.cs" />
@@ -128,6 +164,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBackoffice\FrmBACKOFFICE.resx">
+      <DependentUpon>FrmBACKOFFICE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmCF.resx">
       <DependentUpon>FrmCF.cs</DependentUpon>
@@ -160,6 +199,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ConfiguradorPDV_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -173,7 +213,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unnamed.png" />
   </ItemGroup>

@@ -43,14 +43,22 @@
             this.btnVerPDV = new System.Windows.Forms.Button();
             this.cbxUsaLinkedServer = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnVerBackoffice = new System.Windows.Forms.Button();
             this.tclEquipos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxIP
             // 
-            this.tbxIP.Location = new System.Drawing.Point(13, 14);
+            this.tbxIP.Location = new System.Drawing.Point(10, 25);
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(127, 20);
             this.tbxIP.TabIndex = 0;
@@ -58,7 +66,7 @@
             // 
             // tbxClave
             // 
-            this.tbxClave.Location = new System.Drawing.Point(12, 43);
+            this.tbxClave.Location = new System.Drawing.Point(11, 65);
             this.tbxClave.Name = "tbxClave";
             this.tbxClave.Size = new System.Drawing.Size(128, 20);
             this.tbxClave.TabIndex = 1;
@@ -67,7 +75,7 @@
             // 
             // btnTraer
             // 
-            this.btnTraer.Location = new System.Drawing.Point(166, 44);
+            this.btnTraer.Location = new System.Drawing.Point(154, 65);
             this.btnTraer.Name = "btnTraer";
             this.btnTraer.Size = new System.Drawing.Size(75, 23);
             this.btnTraer.TabIndex = 3;
@@ -77,7 +85,7 @@
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(166, 73);
+            this.btnConectar.Location = new System.Drawing.Point(154, 102);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(75, 23);
             this.btnConectar.TabIndex = 4;
@@ -88,14 +96,14 @@
             // cbxBases
             // 
             this.cbxBases.FormattingEnabled = true;
-            this.cbxBases.Location = new System.Drawing.Point(12, 75);
+            this.cbxBases.Location = new System.Drawing.Point(11, 104);
             this.cbxBases.Name = "cbxBases";
             this.cbxBases.Size = new System.Drawing.Size(127, 21);
             this.cbxBases.TabIndex = 5;
             // 
             // tbxPuerto
             // 
-            this.tbxPuerto.Location = new System.Drawing.Point(166, 14);
+            this.tbxPuerto.Location = new System.Drawing.Point(154, 25);
             this.tbxPuerto.Name = "tbxPuerto";
             this.tbxPuerto.Size = new System.Drawing.Size(75, 20);
             this.tbxPuerto.TabIndex = 6;
@@ -104,7 +112,8 @@
             // tclEquipos
             // 
             this.tclEquipos.Controls.Add(this.tabPage1);
-            this.tclEquipos.Location = new System.Drawing.Point(12, 126);
+            this.tclEquipos.Controls.Add(this.tabPage2);
+            this.tclEquipos.Location = new System.Drawing.Point(12, 151);
             this.tclEquipos.Name = "tclEquipos";
             this.tclEquipos.SelectedIndex = 0;
             this.tclEquipos.Size = new System.Drawing.Size(438, 313);
@@ -182,18 +191,88 @@
             this.cbxUsaLinkedServer.AutoSize = true;
             this.cbxUsaLinkedServer.Checked = true;
             this.cbxUsaLinkedServer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxUsaLinkedServer.Location = new System.Drawing.Point(12, 106);
+            this.cbxUsaLinkedServer.Location = new System.Drawing.Point(12, 131);
             this.cbxUsaLinkedServer.Name = "cbxUsaLinkedServer";
             this.cbxUsaLinkedServer.Size = new System.Drawing.Size(15, 14);
             this.cbxUsaLinkedServer.TabIndex = 56;
             this.cbxUsaLinkedServer.UseVisualStyleBackColor = true;
             this.cbxUsaLinkedServer.CheckedChanged += new System.EventHandler(this.cbxUsaLinkedServer_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Direccion IP";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Contraseña";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Base de datos";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 132);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 13);
+            this.label4.TabIndex = 60;
+            this.label4.Text = "Conectarse Localmente";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(151, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Puerto";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnVerBackoffice);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(430, 287);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "BACKOFFICE";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnVerBackoffice
+            // 
+            this.btnVerBackoffice.Location = new System.Drawing.Point(331, 230);
+            this.btnVerBackoffice.Name = "btnVerBackoffice";
+            this.btnVerBackoffice.Size = new System.Drawing.Size(96, 54);
+            this.btnVerBackoffice.TabIndex = 2;
+            this.btnVerBackoffice.Text = "VER BASE";
+            this.btnVerBackoffice.UseVisualStyleBackColor = true;
+            this.btnVerBackoffice.Click += new System.EventHandler(this.btnVerBackoffice_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 444);
+            this.ClientSize = new System.Drawing.Size(458, 469);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxUsaLinkedServer);
             this.Controls.Add(this.tclEquipos);
             this.Controls.Add(this.tbxPuerto);
@@ -203,11 +282,12 @@
             this.Controls.Add(this.tbxClave);
             this.Controls.Add(this.tbxIP);
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "ConfiguradorPDV";
             this.tclEquipos.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +310,13 @@
         private System.Windows.Forms.TextBox tbxPuertoCaja;
         private System.Windows.Forms.CheckBox cbxUsaLinkedServer;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnVerBackoffice;
     }
 }
 

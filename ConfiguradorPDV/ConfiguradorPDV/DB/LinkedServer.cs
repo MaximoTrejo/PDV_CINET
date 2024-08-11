@@ -13,8 +13,8 @@ namespace ConfiguradorPDV.DB
     {
 
         Factory factory;
-        string _equipo;
-        string _baseDatos;
+        public string _equipo;
+        public string _baseDatos;
         string _clave;
         public string _puerto;
         public bool EsLinkedServer = false;
