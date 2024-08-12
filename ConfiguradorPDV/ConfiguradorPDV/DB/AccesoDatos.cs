@@ -16,17 +16,10 @@ namespace ConfiguradorPDV.DB
 
         public AccesoDatos(string server, string port, string database, string password)
         {
-            try
-            {
-                string connectionString = $"Server={server},{port};Database={database};User Id=sa;Password={password};";
-                _conexion = new SqlConnection(connectionString);
-                _conexion.Open();
-            }
-            catch (SqlException ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           string connectionString = $"Server={server},{port};Database={database};User Id=sa;Password={password};";
+           _conexion = new SqlConnection(connectionString);
+           _conexion.Open();
+            
         }
 
         public static AccesoDatos ObtenerInstancia(string server, string port, string database, string password)

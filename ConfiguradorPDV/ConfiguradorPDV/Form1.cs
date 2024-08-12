@@ -32,13 +32,18 @@ namespace ConfiguradorPDV
             string clave = tbxClave.Text;
 
             Factory accesoDatos = new Factory(IP, puerto, "master", clave);
-            accesoDatos.ObtenerConexion();
 
-            master_controller = new master_controller(accesoDatos);
+            if (accesoDatos.ObtenerConexion() != null)
+            {
+                master_controller = new master_controller(accesoDatos);
 
-            List<string> databases = master_controller.GetDB();
-            cbxBases.DataSource = databases;
-
+                List<string> databases = master_controller.GetDB();
+                cbxBases.DataSource = databases;
+            }
+            else
+            {
+                MessageBox.Show("No es posible conectarse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -51,14 +56,20 @@ namespace ConfiguradorPDV
             string baseDatos = cbxBases.Text;
 
             Factory accesoBaseElegida = new Factory(IP, puerto, baseDatos, clave);
-            accesoBaseElegida.ObtenerConexion();
-            factory = accesoBaseElegida;
-            DataTable equiposTable;
-            master_controller = new master_controller(factory);
-            equiposTable = master_controller.GetEquipos();
-            dgvEquipos.DataSource = equiposTable;
-            dgvEquipos.CurrentCell = null;
 
+            if (accesoBaseElegida.ObtenerConexion() != null)
+            {
+                factory = accesoBaseElegida;
+                DataTable equiposTable;
+                master_controller = new master_controller(factory);
+                equiposTable = master_controller.GetEquipos();
+                dgvEquipos.DataSource = equiposTable;
+                dgvEquipos.CurrentCell = null;
+            }
+            else
+            {
+                MessageBox.Show("No es posible conectarse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

@@ -48,3 +48,8 @@ C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.application
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.exe.manifest
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.application
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FormularioBackoffice.FrmBACKOFFICE.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.exe.manifest
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\bin\Debug\ConfiguradorPDV.application
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.exe.manifest
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.application
