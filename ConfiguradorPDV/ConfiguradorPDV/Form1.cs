@@ -26,25 +26,26 @@ namespace ConfiguradorPDV
 
         private void btnTraer_Click(object sender, EventArgs e)
         {
-
             string IP = tbxIP.Text;
             string puerto = tbxPuerto.Text;
             string clave = tbxClave.Text;
 
-            Factory accesoDatos = new Factory(IP, puerto, "master", clave);
-
-            if (accesoDatos.ObtenerConexion() != null)
+            try
             {
+                Factory accesoDatos = new Factory(IP, puerto, "master", clave);
+
+                accesoDatos.ObtenerConexion();
+                
                 master_controller = new master_controller(accesoDatos);
 
                 List<string> databases = master_controller.GetDB();
                 cbxBases.DataSource = databases;
+                
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No es posible conectarse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -54,22 +55,15 @@ namespace ConfiguradorPDV
             string puerto = tbxPuerto.Text;
             string clave = tbxClave.Text;
             string baseDatos = cbxBases.Text;
-
             Factory accesoBaseElegida = new Factory(IP, puerto, baseDatos, clave);
-
-            if (accesoBaseElegida.ObtenerConexion() != null)
-            {
-                factory = accesoBaseElegida;
-                DataTable equiposTable;
-                master_controller = new master_controller(factory);
-                equiposTable = master_controller.GetEquipos();
-                dgvEquipos.DataSource = equiposTable;
-                dgvEquipos.CurrentCell = null;
-            }
-            else
-            {
-                MessageBox.Show("No es posible conectarse", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            accesoBaseElegida.ObtenerConexion();
+            factory = accesoBaseElegida;
+            DataTable equiposTable;
+            master_controller = new master_controller(factory);
+            equiposTable = master_controller.GetEquipos();
+            dgvEquipos.DataSource = equiposTable;
+            dgvEquipos.CurrentCell = null;
+            
 
         }
 

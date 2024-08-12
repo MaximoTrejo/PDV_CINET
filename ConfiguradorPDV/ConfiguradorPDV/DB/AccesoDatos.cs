@@ -16,16 +16,23 @@ namespace ConfiguradorPDV.DB
 
         public AccesoDatos(string server, string port, string database, string password)
         {
+
            string connectionString = $"Server={server},{port};Database={database};User Id=sa;Password={password};";
            _conexion = new SqlConnection(connectionString);
            _conexion.Open();
-            
         }
 
         public static AccesoDatos ObtenerInstancia(string server, string port, string database, string password)
         {
-           _instancia = new AccesoDatos(server, port, database, password);
-           return _instancia;
+            try
+            {
+                _instancia = new AccesoDatos(server, port, database, password);
+                return _instancia;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener la instancia: {ex.Message}", ex);
+            }
         }
         public SqlCommand PrepararConsulta(string sql)
         {
