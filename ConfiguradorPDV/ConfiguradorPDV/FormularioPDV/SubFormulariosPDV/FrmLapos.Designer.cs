@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLapos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTerminalLapos = new System.Windows.Forms.Button();
             this.btnCuitLapos = new System.Windows.Forms.Button();
@@ -204,6 +205,7 @@
             this.Controls.Add(this.dgvNumeroComercio);
             this.Controls.Add(this.btnNumeroComercio);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLapos";
             this.Text = "FrmLapos";
             this.Load += new System.EventHandler(this.FrmLapos_Load);

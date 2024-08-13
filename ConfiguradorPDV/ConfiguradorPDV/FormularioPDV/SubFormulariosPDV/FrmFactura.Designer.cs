@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFactura));
             this.Factura = new System.Windows.Forms.GroupBox();
             this.tbxDireccion = new System.Windows.Forms.TextBox();
             this.tbxLocalidad = new System.Windows.Forms.TextBox();
@@ -159,6 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 151);
             this.Controls.Add(this.Factura);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmFactura";
             this.Text = "FrmFactura";
             this.Load += new System.EventHandler(this.FrmFactura_Load);

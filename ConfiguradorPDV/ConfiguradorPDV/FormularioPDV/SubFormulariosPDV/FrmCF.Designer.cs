@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCF));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnIpHasar = new System.Windows.Forms.Button();
             this.tbxPuertoFiscal = new System.Windows.Forms.TextBox();
@@ -176,6 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(268, 222);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCF";
             this.Text = "FrmCF";
             this.Load += new System.EventHandler(this.FrmCF_Load);

@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|c:\\users\\maxim\\onedrive\\escritorio\\pdv_cinet\\configuradorpdv\\configuradorpdv\\formulariopdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2197A8D-1720-4FB7-8EF9-FD82B8E8909F}|ConfiguradorPDV\\ConfiguradorPDV.csproj|solutionrelative:configuradorpdv\\formulariopdv\\frmpdv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,23 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 458,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmPDV.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FormularioPDV\\FrmPDV.cs",
-              "RelativeDocumentMoniker": "ConfiguradorPDV\\FormularioPDV\\FrmPDV.cs",
-              "ToolTip": "C:\\Users\\maxim\\OneDrive\\Escritorio\\PDV_CINET\\ConfiguradorPDV\\ConfiguradorPDV\\FormularioPDV\\FrmPDV.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ConfiguradorPDV\\FormularioPDV\\FrmPDV.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T17:54:08.474Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

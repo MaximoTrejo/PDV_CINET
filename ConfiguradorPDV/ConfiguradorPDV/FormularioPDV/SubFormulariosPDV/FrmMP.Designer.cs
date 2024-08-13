@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMP));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClientSecret = new System.Windows.Forms.Button();
             this.tbxClientSecret = new System.Windows.Forms.TextBox();
@@ -274,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 382);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMP";
             this.Text = "FrmMP";
             this.Load += new System.EventHandler(this.FrmMP_Load);

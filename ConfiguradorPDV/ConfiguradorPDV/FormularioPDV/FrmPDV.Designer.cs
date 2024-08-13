@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPDV));
             this.tbxCuit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +49,13 @@
             this.tbxCodLocal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLapos = new System.Windows.Forms.Button();
+            this.btnMP = new System.Windows.Forms.Button();
+            this.btnCF = new System.Windows.Forms.Button();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.btnMail = new System.Windows.Forms.Button();
+            this.btnSql = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMarcha = new System.Windows.Forms.Button();
             this.btnRMarcha = new System.Windows.Forms.Button();
@@ -109,13 +117,12 @@
             this.tbxUsaTotem = new System.Windows.Forms.TextBox();
             this.btnUsaTotem = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnLapos = new System.Windows.Forms.Button();
-            this.btnMP = new System.Windows.Forms.Button();
-            this.btnCF = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnMail = new System.Windows.Forms.Button();
-            this.btnSql = new System.Windows.Forms.Button();
-            this.btnTicket = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -210,9 +217,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tbxPDVManual);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 238);
+            this.groupBox1.Size = new System.Drawing.Size(249, 244);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
@@ -317,11 +324,88 @@
             this.groupBox2.Controls.Add(this.btnMail);
             this.groupBox2.Controls.Add(this.btnSql);
             this.groupBox2.Controls.Add(this.btnTicket);
-            this.groupBox2.Location = new System.Drawing.Point(12, 248);
+            this.groupBox2.Location = new System.Drawing.Point(12, 294);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(500, 161);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
+            // 
+            // btnLapos
+            // 
+            this.btnLapos.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.E4gzH4HWQAUcB2T;
+            this.btnLapos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLapos.Location = new System.Drawing.Point(12, 89);
+            this.btnLapos.Name = "btnLapos";
+            this.btnLapos.Size = new System.Drawing.Size(75, 55);
+            this.btnLapos.TabIndex = 16;
+            this.btnLapos.UseVisualStyleBackColor = true;
+            this.btnLapos.Click += new System.EventHandler(this.btnLapos_Click);
+            // 
+            // btnMP
+            // 
+            this.btnMP.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.unnamed;
+            this.btnMP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMP.Location = new System.Drawing.Point(12, 28);
+            this.btnMP.Name = "btnMP";
+            this.btnMP.Size = new System.Drawing.Size(75, 55);
+            this.btnMP.TabIndex = 10;
+            this.btnMP.UseVisualStyleBackColor = true;
+            this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
+            // 
+            // btnCF
+            // 
+            this.btnCF.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.istockphoto_1264394690_612x612;
+            this.btnCF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCF.Location = new System.Drawing.Point(93, 28);
+            this.btnCF.Name = "btnCF";
+            this.btnCF.Size = new System.Drawing.Size(75, 55);
+            this.btnCF.TabIndex = 11;
+            this.btnCF.UseVisualStyleBackColor = true;
+            this.btnCF.Click += new System.EventHandler(this.btnCF_Click);
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.gratis_png_instalacion_de_iconos_de_computadora_configuracion_de_computadora_ingeniero;
+            this.btnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfiguracion.Location = new System.Drawing.Point(336, 28);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(75, 55);
+            this.btnConfiguracion.TabIndex = 15;
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
+            // btnMail
+            // 
+            this.btnMail.BackgroundImage = global::ConfiguradorPDV.Properties.Resources._7d07339f9bdecc320c3938fc05a8106d;
+            this.btnMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMail.Location = new System.Drawing.Point(174, 28);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(75, 55);
+            this.btnMail.TabIndex = 12;
+            this.btnMail.UseVisualStyleBackColor = true;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            // 
+            // btnSql
+            // 
+            this.btnSql.BackgroundImage = global::ConfiguradorPDV.Properties.Resources._4492311;
+            this.btnSql.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSql.Location = new System.Drawing.Point(417, 28);
+            this.btnSql.Name = "btnSql";
+            this.btnSql.Size = new System.Drawing.Size(75, 55);
+            this.btnSql.TabIndex = 14;
+            this.btnSql.UseVisualStyleBackColor = true;
+            this.btnSql.Click += new System.EventHandler(this.btnSql_Click);
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.invoice_line_icon_logo_illustration_free_vector;
+            this.btnTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTicket.Location = new System.Drawing.Point(255, 28);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(75, 55);
+            this.btnTicket.TabIndex = 13;
+            this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // panel1
             // 
@@ -336,9 +420,9 @@
             this.panel1.Controls.Add(this.tbxBandejas);
             this.panel1.Controls.Add(this.btnBandejas);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Location = new System.Drawing.Point(267, 12);
+            this.panel1.Location = new System.Drawing.Point(267, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 103);
+            this.panel1.Size = new System.Drawing.Size(245, 104);
             this.panel1.TabIndex = 31;
             // 
             // btnMarcha
@@ -444,7 +528,7 @@
             this.panel2.Controls.Add(this.tbxZonaActiva);
             this.panel2.Controls.Add(this.btnZonaActiva);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(267, 121);
+            this.panel2.Location = new System.Drawing.Point(267, 157);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(245, 121);
             this.panel2.TabIndex = 38;
@@ -627,7 +711,7 @@
             this.panel3.Controls.Add(this.tbxDeliveryHero);
             this.panel3.Controls.Add(this.btnDeliveryHero);
             this.panel3.Controls.Add(this.label18);
-            this.panel3.Location = new System.Drawing.Point(522, 12);
+            this.panel3.Location = new System.Drawing.Point(523, 34);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(245, 103);
             this.panel3.TabIndex = 38;
@@ -762,9 +846,9 @@
             this.panel4.Controls.Add(this.tbxUsaTotem);
             this.panel4.Controls.Add(this.btnUsaTotem);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(522, 121);
+            this.panel4.Location = new System.Drawing.Point(522, 157);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(245, 288);
+            this.panel4.Size = new System.Drawing.Size(245, 298);
             this.panel4.TabIndex = 39;
             // 
             // btnCodigoB
@@ -927,94 +1011,96 @@
             this.label21.TabIndex = 29;
             this.label21.Text = "USA TOTEM";
             // 
-            // btnLapos
+            // label26
             // 
-            this.btnLapos.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.E4gzH4HWQAUcB2T;
-            this.btnLapos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLapos.Location = new System.Drawing.Point(12, 89);
-            this.btnLapos.Name = "btnLapos";
-            this.btnLapos.Size = new System.Drawing.Size(75, 55);
-            this.btnLapos.TabIndex = 16;
-            this.btnLapos.UseVisualStyleBackColor = true;
-            this.btnLapos.Click += new System.EventHandler(this.btnLapos_Click);
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.SystemColors.Control;
+            this.label26.Location = new System.Drawing.Point(12, 19);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(88, 13);
+            this.label26.TabIndex = 17;
+            this.label26.Text = "PRINCIPALES";
             // 
-            // btnMP
+            // label27
             // 
-            this.btnMP.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.unnamed;
-            this.btnMP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMP.Location = new System.Drawing.Point(12, 28);
-            this.btnMP.Name = "btnMP";
-            this.btnMP.Size = new System.Drawing.Size(75, 55);
-            this.btnMP.TabIndex = 10;
-            this.btnMP.UseVisualStyleBackColor = true;
-            this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.SystemColors.Control;
+            this.label27.Location = new System.Drawing.Point(267, 19);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(68, 13);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "COMANDA";
             // 
-            // btnCF
+            // label28
             // 
-            this.btnCF.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.istockphoto_1264394690_612x612;
-            this.btnCF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCF.Location = new System.Drawing.Point(93, 28);
-            this.btnCF.Name = "btnCF";
-            this.btnCF.Size = new System.Drawing.Size(75, 55);
-            this.btnCF.TabIndex = 11;
-            this.btnCF.UseVisualStyleBackColor = true;
-            this.btnCF.Click += new System.EventHandler(this.btnCF_Click);
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.SystemColors.Control;
+            this.label28.Location = new System.Drawing.Point(267, 141);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(125, 13);
+            this.label28.TabIndex = 40;
+            this.label28.Text = "ZONA DE ENTREGA";
             // 
-            // btnConfiguracion
+            // label29
             // 
-            this.btnConfiguracion.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.gratis_png_instalacion_de_iconos_de_computadora_configuracion_de_computadora_ingeniero;
-            this.btnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfiguracion.Location = new System.Drawing.Point(336, 28);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(75, 55);
-            this.btnConfiguracion.TabIndex = 15;
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.SystemColors.Control;
+            this.label29.Location = new System.Drawing.Point(520, 142);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(50, 13);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "OTROS";
             // 
-            // btnMail
+            // label30
             // 
-            this.btnMail.BackgroundImage = global::ConfiguradorPDV.Properties.Resources._7d07339f9bdecc320c3938fc05a8106d;
-            this.btnMail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMail.Location = new System.Drawing.Point(174, 28);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(75, 55);
-            this.btnMail.TabIndex = 12;
-            this.btnMail.UseVisualStyleBackColor = true;
-            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.SystemColors.Control;
+            this.label30.Location = new System.Drawing.Point(520, 18);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(68, 13);
+            this.label30.TabIndex = 42;
+            this.label30.Text = "DELIVERY";
             // 
-            // btnSql
+            // label31
             // 
-            this.btnSql.BackgroundImage = global::ConfiguradorPDV.Properties.Resources._4492311;
-            this.btnSql.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSql.Location = new System.Drawing.Point(417, 28);
-            this.btnSql.Name = "btnSql";
-            this.btnSql.Size = new System.Drawing.Size(75, 55);
-            this.btnSql.TabIndex = 14;
-            this.btnSql.UseVisualStyleBackColor = true;
-            this.btnSql.Click += new System.EventHandler(this.btnSql_Click);
-            // 
-            // btnTicket
-            // 
-            this.btnTicket.BackgroundImage = global::ConfiguradorPDV.Properties.Resources.invoice_line_icon_logo_illustration_free_vector;
-            this.btnTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTicket.Location = new System.Drawing.Point(255, 28);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(75, 55);
-            this.btnTicket.TabIndex = 13;
-            this.btnTicket.UseVisualStyleBackColor = true;
-            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.SystemColors.Control;
+            this.label31.Location = new System.Drawing.Point(12, 283);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 13);
+            this.label31.TabIndex = 43;
+            this.label31.Text = "VARIOS";
             // 
             // FrmPDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 421);
+            this.ClientSize = new System.Drawing.Size(779, 464);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPDV";
             this.Text = "FrmPDV";
             this.Load += new System.EventHandler(this.FrmPDV_Load);
@@ -1030,6 +1116,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1123,5 +1210,11 @@
         private System.Windows.Forms.TextBox tbxCentraliza;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnLapos;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
     }
 }

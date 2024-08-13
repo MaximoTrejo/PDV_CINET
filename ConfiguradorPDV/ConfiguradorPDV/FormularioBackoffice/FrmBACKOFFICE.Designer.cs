@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBACKOFFICE));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnNomEmpresa = new System.Windows.Forms.Button();
+            this.tbxNombreEmpresa = new System.Windows.Forms.TextBox();
             this.btnPDV = new System.Windows.Forms.Button();
             this.btnCodLocal = new System.Windows.Forms.Button();
             this.btnCuit = new System.Windows.Forms.Button();
@@ -38,9 +42,6 @@
             this.tbxCuit = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxPDV = new System.Windows.Forms.TextBox();
-            this.tbxNombreEmpresa = new System.Windows.Forms.TextBox();
-            this.btnNomEmpresa = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,32 @@
             this.groupBox1.Size = new System.Drawing.Size(249, 190);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(128, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "NOMBRE EMPRESA";
+            // 
+            // btnNomEmpresa
+            // 
+            this.btnNomEmpresa.Location = new System.Drawing.Point(128, 138);
+            this.btnNomEmpresa.Name = "btnNomEmpresa";
+            this.btnNomEmpresa.Size = new System.Drawing.Size(75, 23);
+            this.btnNomEmpresa.TabIndex = 44;
+            this.btnNomEmpresa.Text = "Configurar";
+            this.btnNomEmpresa.UseVisualStyleBackColor = true;
+            this.btnNomEmpresa.Click += new System.EventHandler(this.btnNomEmpresa_Click);
+            // 
+            // tbxNombreEmpresa
+            // 
+            this.tbxNombreEmpresa.Location = new System.Drawing.Point(130, 112);
+            this.tbxNombreEmpresa.Name = "tbxNombreEmpresa";
+            this.tbxNombreEmpresa.Size = new System.Drawing.Size(98, 20);
+            this.tbxNombreEmpresa.TabIndex = 34;
             // 
             // btnPDV
             // 
@@ -142,38 +169,13 @@
             this.tbxPDV.Size = new System.Drawing.Size(100, 20);
             this.tbxPDV.TabIndex = 3;
             // 
-            // tbxNombreEmpresa
-            // 
-            this.tbxNombreEmpresa.Location = new System.Drawing.Point(130, 112);
-            this.tbxNombreEmpresa.Name = "tbxNombreEmpresa";
-            this.tbxNombreEmpresa.Size = new System.Drawing.Size(98, 20);
-            this.tbxNombreEmpresa.TabIndex = 34;
-            // 
-            // btnNomEmpresa
-            // 
-            this.btnNomEmpresa.Location = new System.Drawing.Point(128, 138);
-            this.btnNomEmpresa.Name = "btnNomEmpresa";
-            this.btnNomEmpresa.Size = new System.Drawing.Size(75, 23);
-            this.btnNomEmpresa.TabIndex = 44;
-            this.btnNomEmpresa.Text = "Configurar";
-            this.btnNomEmpresa.UseVisualStyleBackColor = true;
-            this.btnNomEmpresa.Click += new System.EventHandler(this.btnNomEmpresa_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(128, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "NOMBRE EMPRESA";
-            // 
             // FrmBACKOFFICE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 211);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBACKOFFICE";
             this.Text = "FrmBACKOFFICE";
             this.Load += new System.EventHandler(this.FrmBACKOFFICE_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tbxIP = new System.Windows.Forms.TextBox();
             this.tbxClave = new System.Windows.Forms.TextBox();
             this.btnTraer = new System.Windows.Forms.Button();
@@ -174,7 +175,6 @@
             this.dgvEquipos.StandardTab = true;
             this.dgvEquipos.TabIndex = 6;
             this.dgvEquipos.TabStop = false;
-        
             // 
             // btnVerPDV
             // 
@@ -281,6 +281,7 @@
             this.Controls.Add(this.btnTraer);
             this.Controls.Add(this.tbxClave);
             this.Controls.Add(this.tbxIP);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "ConfiguradorPDV";
             this.tclEquipos.ResumeLayout(false);
