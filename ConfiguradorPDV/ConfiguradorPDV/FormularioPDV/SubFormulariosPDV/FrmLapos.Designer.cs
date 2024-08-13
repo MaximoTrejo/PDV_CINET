@@ -186,7 +186,7 @@
             // dgvNumeroComercio
             // 
             this.dgvNumeroComercio.AllowUserToAddRows = false;
-            this.dgvNumeroComercio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvNumeroComercio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNumeroComercio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNumeroComercio.Location = new System.Drawing.Point(12, 192);
             this.dgvNumeroComercio.Name = "dgvNumeroComercio";

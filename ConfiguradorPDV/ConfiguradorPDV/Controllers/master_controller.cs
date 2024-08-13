@@ -49,16 +49,17 @@ namespace ConfiguradorPDV.Controllers
 
             SqlCommand comando = accesoDatos.PrepararConsulta(@"
                 DECLARE @infoCaja TABLE(
-                    [caja] VARCHAR(2), 
-                    [equipo] VARCHAR(100), 
-                    [version] VARCHAR(100)
-                );
-                
+                [caja] VARCHAR(2), 
+                [equipo] VARCHAR(100), 
+                [uimaCentralizacion] VARCHAR(100),
+	            [codigoLocal] VARCHAR(100));
+
                 INSERT INTO @infoCaja
                 SELECT DISTINCT 
                     caja, 
                     LEFT(EQUIPO, CHARINDEX('#', EQUIPO) - 1) AS equipo, 
-                    valor 
+                    FECHATRANS,
+                	LOCAL as codLocal
                 FROM (
                     SELECT 
                         RANK() OVER(
@@ -72,10 +73,14 @@ namespace ConfiguradorPDV.Controllers
                 WHERE rango = 1
                 ORDER BY equipo;
                 
+                
+                
                 SELECT 
-                    vene_caja, 
-                    suc_codigo, 
-                    equipo
+                    vene_caja as caja, 
+                    suc_codigo as sucursal, 
+                    equipo,
+                    CONVERT(DATE, vene_fecha) AS ultimaVenta,
+                    codigoLocal as local
                 FROM (
                     SELECT
                         ROW_NUMBER() OVER(
@@ -84,7 +89,9 @@ namespace ConfiguradorPDV.Controllers
                         ) AS rn,
                         v.vene_caja,
                         v.suc_codigo,
-                        i.equipo
+                        i.equipo,
+                        v.vene_fecha,
+                        i.codigoLocal
                     FROM VENTAS_E v
                     INNER JOIN @infoCaja i 
                         ON v.vene_caja = i.caja COLLATE SQL_Latin1_General_CP1_CI_AS

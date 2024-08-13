@@ -27,23 +27,30 @@ namespace ConfiguradorPDV.Modelo
         public string traerUno(string ConexionEquipo)
         {
             string exito = "NE";
-
-            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
-
-            string query = $"SELECT para_valor FROM {ConexionEquipo}.parametros WHERE para_codigo = @parametro";
-
-            SqlCommand comando = accesoDatos.PrepararConsulta(query);
-
-            comando.Parameters.AddWithValue("@parametro", _para_codigo);
-
-            SqlDataReader reader = comando.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                exito = reader["para_valor"].ToString();
-            }
 
-            reader.Close();
+                AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+                string query = $"SELECT para_valor FROM {ConexionEquipo}.parametros WHERE para_codigo = @parametro";
+
+                SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+                comando.Parameters.AddWithValue("@parametro", _para_codigo);
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    exito = reader["para_valor"].ToString();
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se perdio la conexion " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             return exito;
         }
