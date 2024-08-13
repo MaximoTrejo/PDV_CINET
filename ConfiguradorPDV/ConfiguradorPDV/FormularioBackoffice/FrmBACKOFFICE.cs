@@ -59,6 +59,10 @@ namespace ConfiguradorPDV.FormularioBackoffice
             tbxCuit.Text = parametros_.TraerValorParametro("CUIT");
             tbxPDV.Text = parametros_.TraerValorParametro("VTAPUNTO");
             tbxCodLocal.Text = parametros_.TraerValorParametro("NOMLOCAL");
+            tbxLimiteCobro.Text = parametros_.TraerValorParametro("FAMAXVALOR");
+            tbxLimiteArqueo.Text = parametros_.TraerValorParametro("MAXARQUEOF");
+            tbxUserPYA.Text = parametros_.TraerValorParametro("UNAME_PYA");
+            tbxPassPYA.Text = parametros_.TraerValorParametro("PASS_PYA");
         }
 
         private void btnCuit_Click(object sender, EventArgs e)
@@ -109,6 +113,30 @@ namespace ConfiguradorPDV.FormularioBackoffice
         {
             string nomEmpre = tbxNombreEmpresa.Text;
             parametros_.modificarParametros("EMPRESA2", "", nomEmpre);
+        }
+
+        private void btnLimiteCobro_Click(object sender, EventArgs e)
+        {
+            string limiteCobro = tbxLimiteCobro.Text;
+            parametros_.modificarParametros("FAMAXVALOR", "", limiteCobro);
+        }
+
+        private void btnLimiteArqueo_Click(object sender, EventArgs e)
+        {
+            string limiteArqueo = tbxLimiteArqueo.Text;
+            parametros_.modificarParametros("MAXARQUEOF", "", limiteArqueo);
+        }
+
+        private void btnUserPYA_Click(object sender, EventArgs e)
+        {
+            string UsuarioPYA = tbxUserPYA.Text;
+            parametros_.modificarParametros("UNAME_PYA", "", UsuarioPYA);
+        }
+
+        private void btnPassPYA_Click(object sender, EventArgs e)
+        {
+            string PassPYA = tbxPassPYA.Text;
+            parametros_.modificarParametros("PASS_PYA", "", PassPYA);
         }
     }
 }

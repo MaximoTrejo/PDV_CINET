@@ -50,6 +50,7 @@ namespace ConfiguradorPDV.Modelo
             catch (Exception ex)
             {
                 MessageBox.Show("Se perdio la conexion " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return exito;
             }
 
             return exito;
