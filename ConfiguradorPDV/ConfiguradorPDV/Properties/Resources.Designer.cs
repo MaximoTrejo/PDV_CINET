@@ -83,10 +83,30 @@ namespace ConfiguradorPDV.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap E4gzH4HWQAUcB2T {
+            get {
+                object obj = ResourceManager.GetObject("E4gzH4HWQAUcB2T", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gratis_png_instalacion_de_iconos_de_computadora_configuracion_de_computadora_ingeniero {
             get {
                 object obj = ResourceManager.GetObject("gratis-png-instalacion-de-iconos-de-computadora-configuracion-de-computadora-inge" +
                         "niero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -107,6 +127,16 @@ namespace ConfiguradorPDV.Properties {
         internal static System.Drawing.Bitmap istockphoto_1264394690_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1264394690-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Payway {
+            get {
+                object obj = ResourceManager.GetObject("Payway", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

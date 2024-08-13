@@ -41,6 +41,8 @@
             this.tbxClaveCaja = new System.Windows.Forms.TextBox();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.btnVerPDV = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnVerBackoffice = new System.Windows.Forms.Button();
             this.cbxUsaLinkedServer = new System.Windows.Forms.CheckBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnVerBackoffice = new System.Windows.Forms.Button();
             this.tclEquipos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -62,7 +62,6 @@
             this.tbxIP.Name = "tbxIP";
             this.tbxIP.Size = new System.Drawing.Size(127, 20);
             this.tbxIP.TabIndex = 0;
-            this.tbxIP.Text = "26.51.65.156";
             // 
             // tbxClave
             // 
@@ -70,7 +69,6 @@
             this.tbxClave.Name = "tbxClave";
             this.tbxClave.Size = new System.Drawing.Size(128, 20);
             this.tbxClave.TabIndex = 1;
-            this.tbxClave.Text = "cinettorcel";
             this.tbxClave.UseSystemPasswordChar = true;
             // 
             // btnTraer
@@ -95,6 +93,7 @@
             // 
             // cbxBases
             // 
+            this.cbxBases.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBases.FormattingEnabled = true;
             this.cbxBases.Location = new System.Drawing.Point(11, 104);
             this.cbxBases.Name = "cbxBases";
@@ -107,7 +106,7 @@
             this.tbxPuerto.Name = "tbxPuerto";
             this.tbxPuerto.Size = new System.Drawing.Size(75, 20);
             this.tbxPuerto.TabIndex = 6;
-            this.tbxPuerto.Text = "1434";
+            this.tbxPuerto.Text = "1433";
             // 
             // tclEquipos
             // 
@@ -175,6 +174,7 @@
             this.dgvEquipos.StandardTab = true;
             this.dgvEquipos.TabIndex = 6;
             this.dgvEquipos.TabStop = false;
+        
             // 
             // btnVerPDV
             // 
@@ -185,6 +185,26 @@
             this.btnVerPDV.Text = "VER PDV";
             this.btnVerPDV.UseVisualStyleBackColor = true;
             this.btnVerPDV.Click += new System.EventHandler(this.btnVerPDV_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btnVerBackoffice);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(430, 287);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "BACKOFFICE";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnVerBackoffice
+            // 
+            this.btnVerBackoffice.Location = new System.Drawing.Point(331, 230);
+            this.btnVerBackoffice.Name = "btnVerBackoffice";
+            this.btnVerBackoffice.Size = new System.Drawing.Size(96, 54);
+            this.btnVerBackoffice.TabIndex = 2;
+            this.btnVerBackoffice.Text = "VER BASE";
+            this.btnVerBackoffice.UseVisualStyleBackColor = true;
+            this.btnVerBackoffice.Click += new System.EventHandler(this.btnVerBackoffice_Click);
             // 
             // cbxUsaLinkedServer
             // 
@@ -242,26 +262,6 @@
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 61;
             this.label5.Text = "Puerto";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btnVerBackoffice);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(430, 287);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "BACKOFFICE";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnVerBackoffice
-            // 
-            this.btnVerBackoffice.Location = new System.Drawing.Point(331, 230);
-            this.btnVerBackoffice.Name = "btnVerBackoffice";
-            this.btnVerBackoffice.Size = new System.Drawing.Size(96, 54);
-            this.btnVerBackoffice.TabIndex = 2;
-            this.btnVerBackoffice.Text = "VER BASE";
-            this.btnVerBackoffice.UseVisualStyleBackColor = true;
-            this.btnVerBackoffice.Click += new System.EventHandler(this.btnVerBackoffice_Click);
             // 
             // frmPrincipal
             // 

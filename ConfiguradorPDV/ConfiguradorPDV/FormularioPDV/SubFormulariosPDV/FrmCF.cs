@@ -33,7 +33,7 @@ namespace ConfiguradorPDV
             tbxIpHasar.Text = parametros_.TraerValorParametro("HASARIP");
             cbxUsaHasar.Text = parametros_.TraerValorParametro("CFISCAL") == "HASAR" ? "S" : "N";
             tbxModeloCF.Text = parametros_.TraerValorParametro("CFMODELO");
-            tbxPuertoF.Text = parametros_.TraerValorParametro("FISCALPORT");
+            tbxPuertoFiscal.Text = parametros_.TraerValorParametro("FISCALPORT");
             //cambiar titulo formulario
             this.Text = "FrmCF " + LinkedServer_._equipo + LinkedServer_._puerto;
         }
@@ -92,7 +92,7 @@ namespace ConfiguradorPDV
 
         private void tbxPuertoF_Click(object sender, EventArgs e)
         {
-            string puertoF = tbxPuertoF.Text;
+            string puertoF = tbxPuertoFiscal.Text;
             parametros_.modificarParametros("FISCALPORT","",puertoF);
         }
     }

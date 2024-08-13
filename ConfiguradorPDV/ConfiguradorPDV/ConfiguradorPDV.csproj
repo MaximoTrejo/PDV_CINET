@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -90,6 +90,7 @@
     <Compile Include="Controllers\parametros_controller.cs" />
     <Compile Include="Controllers\periodos_controller.cs" />
     <Compile Include="Controllers\sucursales_controller.cs" />
+    <Compile Include="Controllers\valLapos_controller.cs" />
     <Compile Include="DB\AccesoDatos.cs" />
     <Compile Include="DB\Factory.cs" />
     <Compile Include="DB\LinkedServer.cs" />
@@ -122,6 +123,12 @@
     </Compile>
     <Compile Include="FormularioPDV\SubFormulariosPDV\FrmFactura.Designer.cs">
       <DependentUpon>FrmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmLapos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPDV\SubFormulariosPDV\FrmLapos.Designer.cs">
+      <DependentUpon>FrmLapos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioPDV\SubFormulariosPDV\FrmMail.cs">
       <SubType>Form</SubType>
@@ -160,6 +167,7 @@
     <Compile Include="Modelo\Parametros.cs" />
     <Compile Include="Modelo\Periodos.cs" />
     <Compile Include="Modelo\Sucursales.cs" />
+    <Compile Include="Modelo\ValLapos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -176,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmFactura.resx">
       <DependentUpon>FrmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmLapos.resx">
+      <DependentUpon>FrmLapos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmMail.resx">
       <DependentUpon>FrmMail.cs</DependentUpon>
@@ -242,6 +253,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gratis-png-instalacion-de-iconos-de-computadora-configuracion-de-computadora-ingeniero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E4gzH4HWQAUcB2T.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

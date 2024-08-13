@@ -55,15 +55,23 @@ namespace ConfiguradorPDV
             string puerto = tbxPuerto.Text;
             string clave = tbxClave.Text;
             string baseDatos = cbxBases.Text;
-            Factory accesoBaseElegida = new Factory(IP, puerto, baseDatos, clave);
-            accesoBaseElegida.ObtenerConexion();
-            factory = accesoBaseElegida;
-            DataTable equiposTable;
-            master_controller = new master_controller(factory);
-            equiposTable = master_controller.GetEquipos();
-            dgvEquipos.DataSource = equiposTable;
-            dgvEquipos.CurrentCell = null;
-            
+
+            if (cbxBases.Text != "")
+            {
+                Factory accesoBaseElegida = new Factory(IP, puerto, baseDatos, clave);
+                accesoBaseElegida.ObtenerConexion();
+                factory = accesoBaseElegida;
+                DataTable equiposTable;
+                master_controller = new master_controller(factory);
+                equiposTable = master_controller.GetEquipos();
+                dgvEquipos.DataSource = equiposTable;
+                dgvEquipos.CurrentCell = null;
+            }
+            else
+            {
+                MessageBox.Show($"Seleccione una base", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
 
@@ -72,31 +80,54 @@ namespace ConfiguradorPDV
             string cajaSeleccionada;
             string claveCaja;
             string puertoCaja;
-            LinkedServer linkedServer = new LinkedServer(); 
-
-            if (cbxUsaLinkedServer.Checked)
+            LinkedServer linkedServer = new LinkedServer();
+            try
             {
-                cajaSeleccionada = dgvEquipos.CurrentRow.Cells[2].Value.ToString();
-
-                if (cbxClaveEquipo.Checked)
+                if (cbxUsaLinkedServer.Checked)
                 {
-                    claveCaja = tbxClaveCaja.Text;
-                    puertoCaja = tbxPuertoCaja.Text;
+
+                    cajaSeleccionada = dgvEquipos.CurrentRow.Cells[2].Value.ToString();
+
+                    if (cbxClaveEquipo.Checked)
+                    {
+                        claveCaja = tbxClaveCaja.Text;
+                        puertoCaja = tbxPuertoCaja.Text;
+                    }
+                    else
+                    {
+                        claveCaja = "cinettorcel";
+                        puertoCaja = "1433";
+                    }
+
+                    linkedServer = new LinkedServer(factory, cajaSeleccionada, claveCaja, puertoCaja);
+                    linkedServer.EsLinkedServer = true;
+                    linkedServer.CrearLinkedServer();
+
+                    FrmPDV pDV = new FrmPDV(factory, linkedServer);
+
+                    if (linkedServer.VerificarConexionLinkedServer())
+                    {
+                        pDV.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error de conexion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 else
                 {
-                    claveCaja = "cinettorcel";
-                    puertoCaja = "1433";
+                    FrmPDV pDV = new FrmPDV(factory, linkedServer);
+                    pDV.Show();
+
                 }
-
-                linkedServer = new LinkedServer(factory, cajaSeleccionada, claveCaja, puertoCaja);
-                linkedServer.EsLinkedServer = true;
-                linkedServer.CrearLinkedServer();
-
+                
             }
-
-            FrmPDV pDV = new FrmPDV(factory,linkedServer);
-            pDV.Show();
+            catch
+            {
+                MessageBox.Show($"Seleccione un equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
 
@@ -131,9 +162,9 @@ namespace ConfiguradorPDV
         private void btnVerBackoffice_Click(object sender, EventArgs e)
         {
             LinkedServer linkedServer = new LinkedServer();
-
             FrmBACKOFFICE frmBACKOFFICE = new FrmBACKOFFICE(factory,linkedServer);
             frmBACKOFFICE.Show();
         }
+
     }
 }

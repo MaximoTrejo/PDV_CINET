@@ -1,5 +1,6 @@
 ﻿using ConfiguradorPDV.Controllers;
 using ConfiguradorPDV.DB;
+using ConfiguradorPDV.FormularioPDV.SubFormulariosPDV;
 using ConfiguradorPDV.Modelo;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ConfiguradorPDV
 {
@@ -64,6 +67,25 @@ namespace ConfiguradorPDV
             tbxNumCaj.Text = parametros_.TraerValorParametro("NUMCAJA");
             cbxTipoFac.Text  = parametros_.TraerValorParametro("MODOFE") == "S" ? "FE" : "CF";
             tbxCodLocal.Text = parametros_.TraerValorParametro("NOMLOCAL");
+            tbxRMarcha.Text = parametros_.TraerValorParametro("RECOMANDA");
+            tbxBandejas.Text = parametros_.TraerValorParametro("BANDEJAS");
+            tbxMarcha.Text = parametros_.TraerValorParametro("MARCHA");
+            tbxZonaActiva.Text = parametros_.TraerValorParametro("DUALPOINT");
+            tbxZonaCafe.Text = parametros_.TraerValorParametro("ZONACAFE");
+            tbxDNF.Text = parametros_.TraerValorParametro("DNFCOPFI");
+            tbxUsaCarriles.Text = parametros_.TraerValorParametro("ELIGECOMA");
+            tbxUsaZonaLocal.Text = parametros_.TraerValorParametro("ZONALOCAL");
+            tbxTUnico.Text = parametros_.TraerValorParametro("USATURNO1");
+            tbxDeliveryHero.Text = parametros_.TraerValorParametro("SERV_DVY");
+            tbxUsaRappi.Text = parametros_.TraerValorParametro("RAPPI");
+            tbxUsaAppMtz.Text = parametros_.TraerValorParametro("APP_MTZ");
+            tbxUsaTotem.Text = parametros_.TraerValorParametro("TOTEM");
+            tbxUsaLectorQr.Text = parametros_.TraerValorParametro("QRCupon");
+            tbxUsaBanda.Text = parametros_.TraerValorParametro("SINBANDA");
+            tbxCentraliza.Text = parametros_.TraerValorParametro("USAREMOTO");
+            tbxCodigoB.Text = parametros_.TraerValorParametro("CODPUERTA");
+            tbxLimiteCobro.Text = parametros_.TraerValorParametro("FAMAXVALOR");
+            tbxUsaPedidoYa.Text = parametros_.TraerValorParametro("PEDIDOYA");
             //cambiar titulo formulario
             this.Text = "FrmPDV " + linkedServer_._equipo + linkedServer_._puerto;
         }
@@ -220,6 +242,359 @@ namespace ConfiguradorPDV
                 parametros_.modificarParametros("MANFE", "", "N");
                 parametros_.modificarParametros("MODOFE", "", "N");
             }
+        }
+
+        private void btnBandejas_Click(object sender, EventArgs e)
+        {
+            string UsaBandejas = tbxBandejas.Text; 
+
+            switch (UsaBandejas)
+            {
+                case "S":
+                    parametros_.modificarParametros("BANDEJAS", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("BANDEJAS", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("BANDEJAS", "", "N");
+                    break;
+            }
+
+            tbxBandejas.Text = parametros_.TraerValorParametro("BANDEJAS");
+        }
+
+        private void btnRMarcha_Click(object sender, EventArgs e)
+        {
+            string Rmarcha = tbxRMarcha.Text;
+
+            switch (Rmarcha)
+            {
+                case "S":
+                    parametros_.modificarParametros("RECOMANDA", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("RECOMANDA", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("RECOMANDA", "", "S");
+                    break;
+            }
+
+            tbxRMarcha.Text = parametros_.TraerValorParametro("RECOMANDA");
+        }
+
+        private void btnMarcha_Click(object sender, EventArgs e)
+        {
+            string marcha = tbxMarcha.Text;
+
+            switch (marcha)
+            {
+                case "S":
+                    parametros_.modificarParametros("MARCHA", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("MARCHA", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("MARCHA", "", "S");
+                    break;
+            }
+            tbxMarcha.Text = parametros_.TraerValorParametro("MARCHA");
+        }
+
+        private void btnZonaActiva_Click(object sender, EventArgs e)
+        {
+            string ZonaActiva = tbxZonaActiva.Text;
+
+            switch (ZonaActiva)
+            {
+                case "S":
+                    parametros_.modificarParametros("DUALPOINT", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("DUALPOINT", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("DUALPOINT", "", "S");
+                    break;
+            }
+            tbxZonaActiva.Text = parametros_.TraerValorParametro("DUALPOINT");
+        }
+
+        private void btnZonaCafe_Click(object sender, EventArgs e)
+        {
+
+            string ZonaCafe = tbxZonaCafe.Text;
+
+            switch (ZonaCafe)
+            {
+                case "S":
+                    parametros_.modificarParametros("ZONACAFE", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("ZONACAFE", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("ZONACAFE", "", "S");
+                    break;
+            }
+            tbxZonaCafe.Text = parametros_.TraerValorParametro("ZONACAFE");
+        }
+
+        private void btnDNF_Click(object sender, EventArgs e)
+        {
+            string DNF = tbxDNF.Text;
+
+            switch (DNF)
+            {
+                case "S":
+                    parametros_.modificarParametros("DNFCOPFI", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("DNFCOPFI", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("DNFCOPFI", "", "S");
+                    break;
+
+            }
+            tbxDNF.Text = parametros_.TraerValorParametro("DNFCOPFI");
+        }
+
+        private void btnUsaCarriles_Click(object sender, EventArgs e)
+        {
+            string UsaCarriles = tbxUsaCarriles.Text;
+
+            switch (UsaCarriles)
+            {
+                case "S":
+                    parametros_.modificarParametros("ELIGECOMA", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("ELIGECOMA", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("ELIGECOMA", "", "S");
+                    break;
+            }
+            tbxUsaCarriles.Text = parametros_.TraerValorParametro("ELIGECOMA");
+        }
+
+        private void btnUsaZonaLocal_Click(object sender, EventArgs e)
+        {
+            string UsaZonaLocal = tbxUsaZonaLocal.Text;
+
+            switch (UsaZonaLocal)
+            {
+                case "S":
+                    parametros_.modificarParametros("ZONALOCAL", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("ZONALOCAL", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("ZONALOCAL", "", "S");
+                    break;
+            }
+            tbxUsaZonaLocal.Text = parametros_.TraerValorParametro("ZONALOCAL");
+        }
+
+        private void btnTurnoUnico_Click(object sender, EventArgs e)
+        {
+            string tUnico = tbxTUnico.Text;
+
+            switch (tUnico)
+            {
+                case "S":
+                    parametros_.modificarParametros("USATURNO1", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("USATURNO1", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("USATURNO1", "", "S");
+                    break;
+            }
+            tbxTUnico.Text = parametros_.TraerValorParametro("USATURNO1");
+        }
+
+        private void btnDeliveryHero_Click(object sender, EventArgs e)
+        {
+            string deliveryHero = tbxDeliveryHero.Text;
+
+            switch (deliveryHero)
+            {
+                case "S":
+                    parametros_.modificarParametros("SERV_DVY", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("SERV_DVY", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("SERV_DVY", "", "S");
+                    break;
+            }
+            tbxDeliveryHero.Text = parametros_.TraerValorParametro("SERV_DVY");
+        }
+
+        private void btnUsaPedidoYa_Click(object sender, EventArgs e)
+        {
+            string UsaPedidoYa = tbxUsaPedidoYa.Text;
+
+            switch (UsaPedidoYa)
+            {
+                case "S":
+                    parametros_.modificarParametros("PEDIDOYA", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("PEDIDOYA", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("PEDIDOYA", "", "S");
+                    break;
+            }
+            tbxUsaPedidoYa.Text = parametros_.TraerValorParametro("PEDIDOYA");
+        }
+
+        private void btnUsaRappi_Click(object sender, EventArgs e)
+        {
+            string UsaRappi = tbxUsaRappi.Text;
+
+            switch (UsaRappi)
+            {
+                case "S":
+                    parametros_.modificarParametros("RAPPI", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("RAPPI", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("RAPPI", "", "S");
+                    break;
+            }
+            tbxUsaRappi.Text = parametros_.TraerValorParametro("RAPPI");
+        }
+
+        private void btnUsaAppMtz_Click(object sender, EventArgs e)
+        {
+            string UsaAppMtz = tbxUsaAppMtz.Text;
+
+            switch (UsaAppMtz)
+            {
+                case "S":
+                    parametros_.modificarParametros("APP_MTZ", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("APP_MTZ", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("APP_MTZ", "", "S");
+                    break;
+            }
+            tbxUsaAppMtz.Text = parametros_.TraerValorParametro("APP_MTZ");
+        }
+
+
+        private void btnUsaTotem_Click(object sender, EventArgs e)
+        {
+            string UsaTotem = tbxUsaTotem.Text;
+
+            switch (UsaTotem)
+            {
+                case "S":
+                    parametros_.modificarParametros("TOTEM", "", "N");
+                    parametros_.modificarParametros("TOTEMPAU", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("TOTEM", "", "S");
+                    parametros_.modificarParametros("TOTEMPAU", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("TOTEM", "", "S");
+                    parametros_.modificarParametros("TOTEMPAU", "", "S");
+                    break;
+            }
+
+            tbxUsaTotem.Text = parametros_.TraerValorParametro("TOTEM");
+        }
+
+        private void btnUsaLectorQr_Click(object sender, EventArgs e)
+        {
+            string UsaLectorQr = tbxUsaLectorQr.Text;
+
+            switch (UsaLectorQr)
+            {
+                case "S":
+                    parametros_.modificarParametros("QRCupon", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("QRCupon", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("QRCupon", "", "S");
+                    break;
+            }
+
+            tbxUsaLectorQr.Text = parametros_.TraerValorParametro("QRCupon");
+        }
+
+        private void btnUsaBanda_Click(object sender, EventArgs e)
+        {
+            string UsaBanda = tbxUsaBanda.Text;
+
+            switch (UsaBanda)
+            {
+                case "S":
+                    parametros_.modificarParametros("SINBANDA", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("SINBANDA", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("SINBANDA", "", "S");
+                    break;
+            }
+            tbxUsaBanda.Text = parametros_.TraerValorParametro("SINBANDA");
+
+        }
+
+        private void btnCentraliza_Click(object sender, EventArgs e)
+        {
+            string Centraliza = tbxCentraliza.Text;
+
+            switch (Centraliza)
+            {
+                case "S":
+                    parametros_.modificarParametros("USAREMOTO", "", "N");
+                    break;
+                case "N":
+                    parametros_.modificarParametros("USAREMOTO", "", "S");
+                    break;
+                default:
+                    parametros_.modificarParametros("USAREMOTO", "", "S");
+                    break;
+            }
+
+            tbxCentraliza.Text = parametros_.TraerValorParametro("USAREMOTO");
+        }
+
+        private void btnCodigoB_Click(object sender, EventArgs e)
+        {
+            string CodigoB = tbxCodigoB.Text;
+            parametros_.modificarParametros("CODPUERTA", "", CodigoB);
+        }
+
+        private void btnLimiteCobro_Click(object sender, EventArgs e)
+        {
+            string LimteCobro = tbxLimiteCobro.Text;
+            parametros_.modificarParametros("FAMAXVALOR", "", LimteCobro);
+        }
+
+        private void btnLapos_Click(object sender, EventArgs e)
+        {   
+            FrmLapos lapos = new FrmLapos(factory, linkedServer_);
+            lapos.Show();
         }
     }
 }

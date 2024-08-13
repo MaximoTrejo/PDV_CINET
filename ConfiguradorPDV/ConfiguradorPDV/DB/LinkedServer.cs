@@ -24,7 +24,6 @@ namespace ConfiguradorPDV.DB
             _equipo = equipo;
             _clave = clave;
             _puerto = puerto;
-            _baseDatos = TraerNombreBase();
         }
 
         public void CrearLinkedServer()
@@ -34,16 +33,16 @@ namespace ConfiguradorPDV.DB
                 AccesoDatos accesoDatos = factory.ObtenerConexion();
 
                 string queryLinkedServer = $@"
-                EXEC sp_addlinkedserver 
-                @server = '{_equipo},{_puerto}', 
-                @srvproduct = N'SQL Server';
+                    EXEC sp_addlinkedserver 
+                    @server = '{_equipo},{_puerto}', 
+                    @srvproduct = N'SQL Server';
 
-                EXEC sp_addlinkedsrvlogin 
-                @rmtsrvname = '{_equipo},{_puerto}', 
-                @useself = 'false', 
-                @locallogin = NULL, 
-                @rmtuser = 'sa', 
-                @rmtpassword = '{_clave}';
+                    EXEC sp_addlinkedsrvlogin 
+                    @rmtsrvname = '{_equipo},{_puerto}', 
+                    @useself = 'false', 
+                    @locallogin = NULL, 
+                    @rmtuser = 'sa', 
+                    @rmtpassword = '{_clave}';
                 ";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(queryLinkedServer);
@@ -60,6 +59,8 @@ namespace ConfiguradorPDV.DB
 
         public string VerificarLinkedServer()
         {
+            _baseDatos = TraerNombreBase();
+
             if (EsLinkedServer is true)
             {
                 return $"[{_equipo},{_puerto}].[{_baseDatos}].dbo";
@@ -79,14 +80,12 @@ namespace ConfiguradorPDV.DB
                 AccesoDatos accesoDatos = factory.ObtenerConexion();
 
                 string linkedDatabase = $"{_equipo},{_puerto}";
-                string query = $"SELECT name FROM [{linkedDatabase}].master.sys.databases WHERE name LIKE @pattern;";
+                string query = $"SELECT name FROM [{linkedDatabase}].master.sys.databases WHERE name LIKE '%PDV%'";
 
                 try
                 {
                     using (SqlCommand comando = accesoDatos.PrepararConsulta(query))
                     {
-                        comando.Parameters.AddWithValue("@pattern", "%PDV%");
-
                         using (SqlDataReader reader = comando.ExecuteReader())
                         {
                             if (reader.Read())
@@ -109,7 +108,32 @@ namespace ConfiguradorPDV.DB
             return nombreBase;
         }
 
+        public bool VerificarConexionLinkedServer()
+        {
+            bool conexionExitosa = false;
 
+            if (factory != null)
+            {
+                AccesoDatos accesoDatos = factory.ObtenerConexion();
+                string linkedServer = $"{_equipo},{_puerto}";
+                string query = $"SELECT 1 AS TestConnection FROM [{linkedServer}].master.dbo.sysdatabases";
+
+                try
+                {
+                    using (SqlCommand comando = accesoDatos.PrepararConsulta(query))
+                    {
+                        var resultado = comando.ExecuteScalar();
+                        conexionExitosa = resultado != null && resultado.Equals(1);
+                    }
+                }
+               catch 
+                {
+                    conexionExitosa=false;
+                }
+            }
+
+            return conexionExitosa;
+        }
 
 
     }
