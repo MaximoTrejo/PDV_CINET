@@ -62,6 +62,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuCompararVyZ = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditarZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -366,24 +367,31 @@
             this.ventasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(275, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(275, 27);
             this.menuStrip1.TabIndex = 51;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuCompararVyZ});
+            this.MnuCompararVyZ,
+            this.auditarZToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
             // MnuCompararVyZ
             // 
             this.MnuCompararVyZ.Name = "MnuCompararVyZ";
-            this.MnuCompararVyZ.Size = new System.Drawing.Size(197, 22);
+            this.MnuCompararVyZ.Size = new System.Drawing.Size(222, 24);
             this.MnuCompararVyZ.Text = "Comparar Ventas con Z";
             this.MnuCompararVyZ.Click += new System.EventHandler(this.MnuCompararVyZ_Click);
+            // 
+            // auditarZToolStripMenuItem
+            // 
+            this.auditarZToolStripMenuItem.Name = "auditarZToolStripMenuItem";
+            this.auditarZToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.auditarZToolStripMenuItem.Text = "Auditar Z";
             // 
             // FrmBACKOFFICE
             // 
@@ -450,5 +458,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuCompararVyZ;
+        private System.Windows.Forms.ToolStripMenuItem auditarZToolStripMenuItem;
     }
 }
