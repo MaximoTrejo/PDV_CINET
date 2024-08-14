@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ConfiguradorPDV.DB;
 using ConfiguradorPDV.Modelo;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace ConfiguradorPDV.Controllers
 {
@@ -41,8 +42,6 @@ namespace ConfiguradorPDV.Controllers
 
             return exito;
         }
-
-
 
 
         public string RegenerarCierre()
@@ -232,13 +231,98 @@ namespace ConfiguradorPDV.Controllers
         }
 
 
+        public DataTable compararVentaZ(string sucursal , DateTime desde, DateTime hasta)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            DataTable dataTable = new DataTable();
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+            string query = $@"
+                            SET DATEFORMAT ymd;
+                            SELECT 
+                                totales.*,
+                                cantidad,
+                                numcierre,
+                                numz,
+                                Ventaz,
+                                importe - ventaz AS restaImpVenZ
+                            FROM (
+                                SELECT 
+                                    CONVERT(date, min(VENE_FECHA)) AS vene_fecha, -- Convertir a solo fecha
+                                    e.suc_Codigo,
+                                    viaj_numero,
+                                    SUM(VENT_IMPORTE) AS importe
+                                FROM 
+                                    {ConexionEquipo}.VENTAS_E e
+                                LEFT JOIN 
+                                    {ConexionEquipo}.ventas_t t ON e.SUC_CODIGO = t.SUC_CODIGO
+                                    AND e.CBTEE_CODIGO = t.CBTEE_CODIGO
+                                    AND e.VENE_NUMERO = t.VENE_NUMERO
+                                    AND t.VENT_CONCEPTO = 'TOTAL'
+                                WHERE 
+                                    E.SUC_CODIGO = @sucursal 
+                                    AND e.VENE_FECHA >= @desde 
+                                    AND e.VENE_FECHA <= @hasta
+                                GROUP BY 
+                                    e.suc_Codigo, viaj_numero 
+                            ) totales
+                            LEFT JOIN (
+                                SELECT 
+                                    PtoVtaZ,  
+                                    numcierre, 
+                                    COUNT(*) AS cantidad, 
+                                    MIN(numeroz) AS numz, 
+                                    SUM(Venta) AS ventaz 
+                                FROM 
+                                    {ConexionEquipo}.ZETA_E 
+                                GROUP BY 
+                                    numcierre, PtoVtaZ
+                            ) z
+                            ON 
+                            viaj_numero = numcierre
+                            AND SUC_CODIGO = PtoVtaZ;
+                            
+                            ";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.Parameters.AddWithValue("@sucursal", sucursal);
+            comando.Parameters.AddWithValue("@desde", desde);
+            comando.Parameters.AddWithValue("@hasta", hasta);
+            SqlDataReader reader = comando.ExecuteReader();
+            dataTable.Load(reader);
+            reader.Close();
+            comando.ExecuteReader();
+            return dataTable;
+        }
 
 
 
 
+        public List<string> TraerPDVs()
+        {
+            List<string> pdvs = new List<string>();
 
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
 
+            string query = $@"
+                SELECT DISTINCT(suc_codigo) 
+                FROM {ConexionEquipo}.ventas_e
+                ";
 
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            using (SqlDataReader reader = comando.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    pdvs.Add(reader.GetString(0));
+                }
+            }
+
+            return pdvs;
+        }
 
 
     }

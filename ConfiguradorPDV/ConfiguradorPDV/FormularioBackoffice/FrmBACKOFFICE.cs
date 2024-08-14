@@ -1,5 +1,6 @@
 ﻿using ConfiguradorPDV.Controllers;
 using ConfiguradorPDV.DB;
+using ConfiguradorPDV.FormularioBackoffice.SubFormularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -137,6 +138,12 @@ namespace ConfiguradorPDV.FormularioBackoffice
         {
             string PassPYA = tbxPassPYA.Text;
             parametros_.modificarParametros("PASS_PYA", "", PassPYA);
+        }
+
+        private void MnuCompararVyZ_Click(object sender, EventArgs e)
+        {
+            FrmCompararZyV compararZyV = new FrmCompararZyV(factory, linkedServer_);
+            compararZyV.Show();
         }
     }
 }
