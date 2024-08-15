@@ -76,11 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\asientos_e_controller.cs" />
+    <Compile Include="Controllers\categdgi_controller.cs" />
     <Compile Include="Controllers\cbteeg_sucursal_controller.cs" />
     <Compile Include="Controllers\cbtein_sucursal_controller.cs" />
     <Compile Include="Controllers\cbte_egresos_n_controller.cs" />
     <Compile Include="Controllers\cbte_ingresos_n_controller.cs" />
     <Compile Include="Controllers\clientes_controller.cs" />
+    <Compile Include="Controllers\comprobantes_d_controller.cs" />
     <Compile Include="Controllers\comprobantes_e_controller.cs" />
     <Compile Include="Controllers\comprobantes_n_controller.cs" />
     <Compile Include="Controllers\dataBase_controllers.cs" />
@@ -167,11 +169,13 @@
       <DependentUpon>FrmSQL.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Asientos_E.cs" />
+    <Compile Include="Modelo\categdgi.cs" />
     <Compile Include="Modelo\cbteeg_sucursal.cs" />
     <Compile Include="Modelo\cbtein_sucursal.cs" />
     <Compile Include="Modelo\cbte_egresos_n.cs" />
     <Compile Include="Modelo\cbte_ingresos_n.cs" />
     <Compile Include="Modelo\clientes.cs" />
+    <Compile Include="Modelo\comprobantes_d.cs" />
     <Compile Include="Modelo\comprobantes_e.cs" />
     <Compile Include="Modelo\comprobantes_n.cs" />
     <Compile Include="Modelo\datos_empresa.cs" />
