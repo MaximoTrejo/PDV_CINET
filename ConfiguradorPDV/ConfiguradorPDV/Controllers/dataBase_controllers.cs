@@ -325,5 +325,49 @@ namespace ConfiguradorPDV.Controllers
         }
 
 
+        public DataTable AuditarZ(string sucursal, DateTime desde, DateTime hasta)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            DataTable dataTable = new DataTable();
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+            string query = $@"                       
+                            SET DATEFORMAT dmy;
+                            SELECT DISTINCT
+                                z.PtoVtaZ AS SUC_CODIGO,
+                                z.run
+                            FROM (
+                                SELECT 
+                                    PtoVtaZ, 
+                                    MIN(NumeroZ) AS desde, 
+                                    MAX(NumeroZ) AS hasta,
+                                    CONCAT('c:\cinet\profit\cierre\cinetfiscalmanager.exe auditarz ', MIN(NumeroZ), ' ', MAX(NumeroZ)) AS run
+                                FROM {ConexionEquipo}.zeta_e
+                                WHERE fecha BETWEEN @fecha_desde AND @fecha_hasta
+                                GROUP BY PtoVtaZ
+                            ) z
+                            LEFT JOIN (
+                                SELECT DISTINCT
+                                    suc_codigo 
+                                FROM {ConexionEquipo}.VENTAS_E
+                                WHERE vene_fecha BETWEEN @fecha_desde AND @fecha_hasta
+                            ) v
+                            ON z.PtoVtaZ = v.suc_codigo
+                            WHERE (@sucursal IS NULL OR z.PtoVtaZ = @sucursal)
+                            ORDER BY z.PtoVtaZ;
+                            ";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.Parameters.AddWithValue("@sucursal", sucursal);
+            comando.Parameters.AddWithValue("@fecha_desde", desde);
+            comando.Parameters.AddWithValue("@fecha_hasta", hasta);
+            SqlDataReader reader = comando.ExecuteReader();
+            dataTable.Load(reader);
+            reader.Close();
+            comando.ExecuteReader();
+            return dataTable;
+        }
+
     }
 }

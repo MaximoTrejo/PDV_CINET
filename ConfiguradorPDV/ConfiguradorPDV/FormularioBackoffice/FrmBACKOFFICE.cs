@@ -145,5 +145,11 @@ namespace ConfiguradorPDV.FormularioBackoffice
             FrmCompararZyV compararZyV = new FrmCompararZyV(factory, linkedServer_);
             compararZyV.Show();
         }
+
+        private void auditarZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAuditarZ auditarZ = new FrmAuditarZ(factory, linkedServer_);
+            auditarZ.Show();
+        }
     }
 }

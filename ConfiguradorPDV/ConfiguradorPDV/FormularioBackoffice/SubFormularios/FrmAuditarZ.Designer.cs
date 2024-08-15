@@ -1,6 +1,6 @@
 ﻿namespace ConfiguradorPDV.FormularioBackoffice.SubFormularios
 {
-    partial class AuditarZ
+    partial class FrmAuditarZ
     {
         /// <summary>
         /// Required designer variable.
@@ -94,6 +94,7 @@
             this.btnBuscar.TabIndex = 24;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // AuditarZ
             // 
@@ -108,6 +109,7 @@
             this.Controls.Add(this.dbvAuditarZ);
             this.Name = "AuditarZ";
             this.Text = "AuditarZ";
+            this.Load += new System.EventHandler(this.AuditarZ_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbvAuditarZ)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -392,6 +392,7 @@
             this.auditarZToolStripMenuItem.Name = "auditarZToolStripMenuItem";
             this.auditarZToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.auditarZToolStripMenuItem.Text = "Auditar Z";
+            this.auditarZToolStripMenuItem.Click += new System.EventHandler(this.auditarZToolStripMenuItem_Click);
             // 
             // FrmBACKOFFICE
             // 

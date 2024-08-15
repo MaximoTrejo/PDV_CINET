@@ -57,3 +57,4 @@ C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj
 C:\Users\maxim\OneDrive\Escritorio\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FormularioBackoffice.SubFormularios.FrmCompararZyV.resources
 C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FormularioBackoffice.SubFormularios.FrmCompararZyV.resources
 C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FormularioPDV.SubFormulariosPDV.FrmLapos.resources
+C:\Users\Cinet\Desktop\PDV_CINET\ConfiguradorPDV\ConfiguradorPDV\obj\Debug\ConfiguradorPDV.FormularioBackoffice.SubFormularios.FrmAuditarZ.resources
