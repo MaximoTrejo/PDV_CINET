@@ -109,18 +109,6 @@
     <Compile Include="FormularioBackoffice\FrmBACKOFFICE.Designer.cs">
       <DependentUpon>FrmBACKOFFICE.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioBackoffice\SubFormularios\FrmAuditarZ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioBackoffice\SubFormularios\FrmAuditarZ.Designer.cs">
-      <DependentUpon>FrmAuditarZ.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioBackoffice\SubFormularios\FrmCompararZyV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioBackoffice\SubFormularios\FrmCompararZyV.Designer.cs">
-      <DependentUpon>FrmCompararZyV.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormularioPDV\SubFormulariosPDV\FrmCF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBackoffice\FrmBACKOFFICE.resx">
       <DependentUpon>FrmBACKOFFICE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioBackoffice\SubFormularios\FrmAuditarZ.resx">
-      <DependentUpon>FrmAuditarZ.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioBackoffice\SubFormularios\FrmCompararZyV.resx">
-      <DependentUpon>FrmCompararZyV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPDV\SubFormulariosPDV\FrmCF.resx">
       <DependentUpon>FrmCF.cs</DependentUpon>

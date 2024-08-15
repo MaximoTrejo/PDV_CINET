@@ -29,11 +29,7 @@ namespace ConfiguradorPDV.Controllers
 
             string existe = cbtexcatdgi.BuscarUno(ConexionEquipo);
 
-            if (existe != "NE")
-            {
-                cbtexcatdgi.modificarUno(ConexionEquipo);
-            }
-            else
+            if (existe == "NE")
             {
                 cbtexcatdgi.insertarUno(ConexionEquipo);
             }

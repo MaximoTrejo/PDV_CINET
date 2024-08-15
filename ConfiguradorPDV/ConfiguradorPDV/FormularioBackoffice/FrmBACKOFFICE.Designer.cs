@@ -59,15 +59,9 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuCompararVyZ = new System.Windows.Forms.ToolStripMenuItem();
-            this.auditarZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.revisarDiferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -84,7 +78,7 @@
             this.groupBox1.Controls.Add(this.tbxCuit);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbxPDV);
-            this.groupBox1.Location = new System.Drawing.Point(12, 79);
+            this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(249, 190);
             this.groupBox1.TabIndex = 17;
@@ -202,7 +196,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbxLimiteCobro);
-            this.groupBox2.Location = new System.Drawing.Point(12, 288);
+            this.groupBox2.Location = new System.Drawing.Point(12, 254);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(120, 180);
             this.groupBox2.TabIndex = 46;
@@ -268,7 +262,7 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.tbxUserPYA);
-            this.groupBox3.Location = new System.Drawing.Point(144, 288);
+            this.groupBox3.Location = new System.Drawing.Point(143, 254);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(120, 180);
             this.groupBox3.TabIndex = 47;
@@ -332,7 +326,7 @@
             this.label26.BackColor = System.Drawing.SystemColors.Highlight;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(9, 63);
+            this.label26.Location = new System.Drawing.Point(9, 19);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(88, 13);
             this.label26.TabIndex = 48;
@@ -344,7 +338,7 @@
             this.label9.BackColor = System.Drawing.SystemColors.Highlight;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(12, 272);
+            this.label9.Location = new System.Drawing.Point(12, 238);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 49;
@@ -356,67 +350,24 @@
             this.label10.BackColor = System.Drawing.SystemColors.Highlight;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(141, 272);
+            this.label10.Location = new System.Drawing.Point(140, 238);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 13);
             this.label10.TabIndex = 50;
             this.label10.Text = "PEDIDO YA";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ventasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(275, 27);
-            this.menuStrip1.TabIndex = 51;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ventasToolStripMenuItem
-            // 
-            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuCompararVyZ,
-            this.auditarZToolStripMenuItem,
-            this.revisarDiferenciasToolStripMenuItem});
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
-            this.ventasToolStripMenuItem.Text = "Ventas";
-            // 
-            // MnuCompararVyZ
-            // 
-            this.MnuCompararVyZ.Name = "MnuCompararVyZ";
-            this.MnuCompararVyZ.Size = new System.Drawing.Size(222, 24);
-            this.MnuCompararVyZ.Text = "Comparar Ventas con Z";
-            this.MnuCompararVyZ.Click += new System.EventHandler(this.MnuCompararVyZ_Click);
-            // 
-            // auditarZToolStripMenuItem
-            // 
-            this.auditarZToolStripMenuItem.Name = "auditarZToolStripMenuItem";
-            this.auditarZToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.auditarZToolStripMenuItem.Text = "Auditar Z";
-            this.auditarZToolStripMenuItem.Click += new System.EventHandler(this.auditarZToolStripMenuItem_Click);
-            // 
-            // revisarDiferenciasToolStripMenuItem
-            // 
-            this.revisarDiferenciasToolStripMenuItem.Name = "revisarDiferenciasToolStripMenuItem";
-            this.revisarDiferenciasToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
-            this.revisarDiferenciasToolStripMenuItem.Text = "Revisar Diferencias";
-            this.revisarDiferenciasToolStripMenuItem.Click += new System.EventHandler(this.revisarDiferenciasToolStripMenuItem_Click);
-            // 
             // FrmBACKOFFICE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 473);
+            this.ClientSize = new System.Drawing.Size(275, 447);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmBACKOFFICE";
             this.Text = "FrmBACKOFFICE";
             this.Load += new System.EventHandler(this.FrmBACKOFFICE_Load);
@@ -426,8 +377,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,10 +414,5 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MnuCompararVyZ;
-        private System.Windows.Forms.ToolStripMenuItem auditarZToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem revisarDiferenciasToolStripMenuItem;
     }
 }
