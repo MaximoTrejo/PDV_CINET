@@ -32,5 +32,6 @@ namespace ConfiguradorPDV.Modelo
 
             comando.ExecuteNonQuery();
         }
+
     }
 }

@@ -21,6 +21,7 @@ namespace ConfiguradorPDV
         comprobantes_e_controller comprobantes_E_;
         comprobantes_d_controller comprobantes_D_;
         categdgi_controller categdgi_;
+        cbtexcatdgi_controller cbtexcatdgi_;
         public FrmConfiguracionExtra(Factory factory, LinkedServer linkedServer_)
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace ConfiguradorPDV
             comprobantes_E_ = new comprobantes_e_controller(factory, linkedServer_);
             categdgi_ = new categdgi_controller(factory, linkedServer_);
             comprobantes_D_ = new comprobantes_d_controller(factory, linkedServer_);
+            cbtexcatdgi_ = new cbtexcatdgi_controller(factory, linkedServer_);
         }
 
         private void FrmConfiguracionExtra_Load(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace ConfiguradorPDV
             List<string> opcionesSiNo = new List<string> { "N", "S" };
             cbxUsaTurno.Items.AddRange(opcionesSiNo.ToArray());
             cbxUsaTComanda.Items.AddRange(opcionesSiNo.ToArray());
+            cbxMonotributista.Items.AddRange(opcionesSiNo.ToArray());
             tbxNombreEmpresa.Text = parametros_.TraerValorParametro("EMPRESA2");
             tbxNombreImpresora.Text = parametros_.TraerValorParametro("PRNCOMANU");
             cbxUsaTurno.Text = parametros_.TraerValorParametro("PRNTURNO");
@@ -100,6 +103,13 @@ namespace ConfiguradorPDV
                 comprobantes_E_.modificarCodigoComprobantes("M");
                 categdgi_.modificarComprobanteCategdgi("M");
                 parametros_.modificarParametros("IVA_MONO", "", EsMonotributista);
+                cbtexcatdgi_.modificarCbtexcatdgi("C", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("E", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("I", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("M", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("N", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("T", "vtas", "FAB");
+                cbtexcatdgi_.modificarCbtexcatdgi("X", "vtas", "FAB");
                 comprobantes_D_.eliminarComprobante("FAB", "VTAS", "IVA1");
                 comprobantes_D_.modificarFormulaComprobante("FAB", "VTAS", "NETO1", "NETO1=SUBTOTAL");
             }

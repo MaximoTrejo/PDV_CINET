@@ -79,6 +79,7 @@
     <Compile Include="Controllers\categdgi_controller.cs" />
     <Compile Include="Controllers\cbteeg_sucursal_controller.cs" />
     <Compile Include="Controllers\cbtein_sucursal_controller.cs" />
+    <Compile Include="Controllers\cbtexcatdgi_controller.cs" />
     <Compile Include="Controllers\cbte_egresos_n_controller.cs" />
     <Compile Include="Controllers\cbte_ingresos_n_controller.cs" />
     <Compile Include="Controllers\clientes_controller.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Modelo\categdgi.cs" />
     <Compile Include="Modelo\cbteeg_sucursal.cs" />
     <Compile Include="Modelo\cbtein_sucursal.cs" />
+    <Compile Include="Modelo\cbtexcatdgi.cs" />
     <Compile Include="Modelo\cbte_egresos_n.cs" />
     <Compile Include="Modelo\cbte_ingresos_n.cs" />
     <Compile Include="Modelo\clientes.cs" />

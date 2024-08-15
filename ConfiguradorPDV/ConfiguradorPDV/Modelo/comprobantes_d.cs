@@ -71,7 +71,7 @@ namespace ConfiguradorPDV.Modelo
                                  ,[CBTED_ORDEN]
                                  ,[CBTED_PIE]
                                  ,[CBTED_CONDICION]
-                                 ,[CBTED_PORCE]) values (@comprobante,@modulo,@concepto@formula,@orden,@pie,@condicion,@porcentaje)";
+                                 ,[CBTED_PORCE]) values (@comprobante,@modulo,@concepto,@formula,@orden,@pie,@condicion,@porcentaje)";
                 SqlCommand comando = accesoDatos.PrepararConsulta(query);
                 comando.Parameters.AddWithValue("@comprobante", _cbtee_codigo);
                 comando.Parameters.AddWithValue("@modulo", _cbtee_modulo);

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConfiguradorPDV.exe" size="1177056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConfiguradorPDV.exe" size="1184224">
       <assemblyIdentity name="ConfiguradorPDV" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>K8vBwabrXuuXtkgNXrdVOph2mN1Ob8rJsXBWof5QhlM=</dsig:DigestValue>
+        <dsig:DigestValue>rP1//xLBnKFYRpgJM8ODnofUzhiKFRu+qsLDy4z40y4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
