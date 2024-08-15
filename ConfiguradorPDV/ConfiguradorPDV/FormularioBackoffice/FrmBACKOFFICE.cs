@@ -151,5 +151,10 @@ namespace ConfiguradorPDV.FormularioBackoffice
             FrmAuditarZ auditarZ = new FrmAuditarZ(factory, linkedServer_);
             auditarZ.Show();
         }
+
+        private void revisarDiferenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuCompararVyZ = new System.Windows.Forms.ToolStripMenuItem();
             this.auditarZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revisarDiferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -375,7 +376,8 @@
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuCompararVyZ,
-            this.auditarZToolStripMenuItem});
+            this.auditarZToolStripMenuItem,
+            this.revisarDiferenciasToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.ventasToolStripMenuItem.Text = "Ventas";
@@ -393,6 +395,13 @@
             this.auditarZToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.auditarZToolStripMenuItem.Text = "Auditar Z";
             this.auditarZToolStripMenuItem.Click += new System.EventHandler(this.auditarZToolStripMenuItem_Click);
+            // 
+            // revisarDiferenciasToolStripMenuItem
+            // 
+            this.revisarDiferenciasToolStripMenuItem.Name = "revisarDiferenciasToolStripMenuItem";
+            this.revisarDiferenciasToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.revisarDiferenciasToolStripMenuItem.Text = "Revisar Diferencias";
+            this.revisarDiferenciasToolStripMenuItem.Click += new System.EventHandler(this.revisarDiferenciasToolStripMenuItem_Click);
             // 
             // FrmBACKOFFICE
             // 
@@ -460,5 +469,6 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuCompararVyZ;
         private System.Windows.Forms.ToolStripMenuItem auditarZToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem revisarDiferenciasToolStripMenuItem;
     }
 }
