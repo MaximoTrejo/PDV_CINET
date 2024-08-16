@@ -89,19 +89,6 @@ namespace ConfiguradorPDV
             }
         }
 
-        private void btnUsaFacturaM_Click(object sender, EventArgs e)
-        {
-            string flag;
-
-            if ()
-            {
-
-            }
-            else
-            {
-
-            }
-        }
 
         private void btnEsMonotributista_Click(object sender, EventArgs e)
         {

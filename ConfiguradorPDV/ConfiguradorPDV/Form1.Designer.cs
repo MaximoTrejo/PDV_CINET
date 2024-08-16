@@ -170,7 +170,7 @@
             this.dgvEquipos.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.RowHeadersVisible = false;
-            this.dgvEquipos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvEquipos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEquipos.Size = new System.Drawing.Size(325, 276);
             this.dgvEquipos.StandardTab = true;
             this.dgvEquipos.TabIndex = 6;
