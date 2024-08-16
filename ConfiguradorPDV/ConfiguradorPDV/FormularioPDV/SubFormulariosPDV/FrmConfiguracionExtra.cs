@@ -120,5 +120,10 @@ namespace ConfiguradorPDV
             
 
         }
+
+        private void btnUsaFacturaM_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

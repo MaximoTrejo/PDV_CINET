@@ -84,6 +84,7 @@
             this.btnUsaFacturaM.TabIndex = 48;
             this.btnUsaFacturaM.Text = "Configurar";
             this.btnUsaFacturaM.UseVisualStyleBackColor = true;
+            this.btnUsaFacturaM.Click += new System.EventHandler(this.btnUsaFacturaM_Click);
             // 
             // brnUsaTComanda
             // 
