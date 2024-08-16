@@ -30,6 +30,7 @@ namespace ConfiguradorPDV.Controllers
             if (existe == "NE")
             {
                 periodos.insertarUno(ConexionEquipo);
+                periodos.deshailitarPeriodos(ConexionEquipo);
             }
 
         }

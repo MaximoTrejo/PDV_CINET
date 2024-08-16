@@ -99,5 +99,26 @@ namespace ConfiguradorPDV.Modelo
             }
         }
 
+        public void deshailitarPeriodos(string ConexionEquipo)
+        {
+            try
+            {
+                AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+                string query = $@"
+                        UPDATE  {ConexionEquipo}.periodos 
+                            set peri_default = 'N' 
+                            where para_codigo != @peri_codigo
+                        ";
+
+                SqlCommand comando = accesoDatos.PrepararConsulta(query);
+                comando.Parameters.AddWithValue("@peri_codigo", _peri_codigo);
+                comando.Parameters.AddWithValue("@peri_default", "S");
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar el Periodo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
