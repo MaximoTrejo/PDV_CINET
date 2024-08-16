@@ -33,51 +33,58 @@ namespace ConfiguradorPDV.Controllers
             int existeNCB = comprobantes_E.BuscarComprobante(ConexionEquipo, "NCB");
             int existeNCA = comprobantes_E.BuscarComprobante(ConexionEquipo, "NCA");
 
-            if (tipo == "FE")
+            switch (tipo)
             {
-                if (existeFAB > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "FAB", "6");
-                }
+                case "FE":
 
-                if (existeFAA > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "FAA", "1");
-                }
+                    if (existeFAB > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "FAB", "6");
+                    }
 
-                if (existeNCB > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "NCB", "8");
-                }
+                    if (existeFAA > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "FAA", "1");
+                    }
 
-                if (existeNCA > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "NCA", "3");
-                }
+                    if (existeNCB > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "NCB", "8");
+                    }
 
+                    if (existeNCA > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "NCA", "3");
+                    }
+                    break;
+                case "CF":
+                    if (existeFAB > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "FAB", "14");
+                    }
+
+                    if (existeFAA > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "FAA", "11");
+                    }
+
+                    if (existeNCB > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "NCB", "4");
+                    }
+
+                    if (existeNCA > 0)
+                    {
+                        comprobantes_E.modificarComprobantes(ConexionEquipo, "NCA", "4");
+                    }
+                    break;
+                case "M":
+                    comprobantes_E.modificarComprobantes(ConexionEquipo, "FAB", "11");
+                    break;
             }
-            else
-            {
-                if (existeFAB > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "FAB", "14");
-                }
 
-                if (existeFAA > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "FAA", "11");
-                }
 
-                if (existeNCB > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "NCB", "4");
-                }
 
-                if (existeNCA > 0)
-                {
-                    comprobantes_E.modificarComprobantes(ConexionEquipo, "NCA", "4");
-                }
-            }
 
             
 

@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfiguracionExtra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbxUsaFacturaM = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnUsaFacturaM = new System.Windows.Forms.Button();
             this.brnUsaTComanda = new System.Windows.Forms.Button();
             this.btnNomImpresora = new System.Windows.Forms.Button();
             this.btnUsaTurno = new System.Windows.Forms.Button();
@@ -44,7 +43,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbxNombreImpresora = new System.Windows.Forms.TextBox();
             this.tbxNombreEmpresa = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEsMonotributista = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,8 +52,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbxUsaFacturaM);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnUsaFacturaM);
             this.groupBox1.Controls.Add(this.brnUsaTComanda);
             this.groupBox1.Controls.Add(this.btnNomImpresora);
             this.groupBox1.Controls.Add(this.btnUsaTurno);
@@ -67,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.tbxNombreImpresora);
             this.groupBox1.Controls.Add(this.tbxNombreEmpresa);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnEsMonotributista);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -78,23 +76,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ConfiguracionesExtra";
             // 
-            // cbxUsaFacturaM
+            // btnUsaFacturaM
             // 
-            this.cbxUsaFacturaM.FormattingEnabled = true;
-            this.cbxUsaFacturaM.Location = new System.Drawing.Point(122, 221);
-            this.cbxUsaFacturaM.Name = "cbxUsaFacturaM";
-            this.cbxUsaFacturaM.Size = new System.Drawing.Size(93, 21);
-            this.cbxUsaFacturaM.TabIndex = 49;
-            this.cbxUsaFacturaM.Text = "NOUSAR";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(123, 251);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 48;
-            this.button5.Text = "Configurar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnUsaFacturaM.Location = new System.Drawing.Point(122, 225);
+            this.btnUsaFacturaM.Name = "btnUsaFacturaM";
+            this.btnUsaFacturaM.Size = new System.Drawing.Size(75, 23);
+            this.btnUsaFacturaM.TabIndex = 48;
+            this.btnUsaFacturaM.Text = "Configurar";
+            this.btnUsaFacturaM.UseVisualStyleBackColor = true;
             // 
             // brnUsaTComanda
             // 
@@ -160,12 +149,11 @@
             this.cbxMonotributista.Name = "cbxMonotributista";
             this.cbxMonotributista.Size = new System.Drawing.Size(84, 21);
             this.cbxMonotributista.TabIndex = 41;
-            this.cbxMonotributista.Text = "NOUSAR";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 205);
+            this.label5.Location = new System.Drawing.Point(120, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 40;
@@ -202,14 +190,15 @@
             this.tbxNombreEmpresa.Size = new System.Drawing.Size(84, 20);
             this.tbxNombreEmpresa.TabIndex = 33;
             // 
-            // button6
+            // btnEsMonotributista
             // 
-            this.button6.Location = new System.Drawing.Point(6, 252);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Configurar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEsMonotributista.Location = new System.Drawing.Point(6, 252);
+            this.btnEsMonotributista.Name = "btnEsMonotributista";
+            this.btnEsMonotributista.Size = new System.Drawing.Size(75, 23);
+            this.btnEsMonotributista.TabIndex = 30;
+            this.btnEsMonotributista.Text = "Configurar";
+            this.btnEsMonotributista.UseVisualStyleBackColor = true;
+            this.btnEsMonotributista.Click += new System.EventHandler(this.btnEsMonotributista_Click);
             // 
             // label3
             // 
@@ -258,22 +247,21 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbxMonotributista;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxUsaTComanda;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbxNombreImpresora;
         private System.Windows.Forms.TextBox tbxNombreEmpresa;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEsMonotributista;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUsaTurno;
         private System.Windows.Forms.ComboBox cbxUsaTurno;
         private System.Windows.Forms.Button btnNomEmpresa;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnUsaFacturaM;
         private System.Windows.Forms.Button brnUsaTComanda;
         private System.Windows.Forms.Button btnNomImpresora;
-        private System.Windows.Forms.ComboBox cbxUsaFacturaM;
+        private System.Windows.Forms.ComboBox cbxMonotributista;
     }
 }
