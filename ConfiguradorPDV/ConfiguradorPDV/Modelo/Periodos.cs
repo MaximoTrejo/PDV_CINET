@@ -107,12 +107,11 @@ namespace ConfiguradorPDV.Modelo
                 string query = $@"
                         UPDATE  {ConexionEquipo}.periodos 
                             set peri_default = 'N' 
-                            where para_codigo != @peri_codigo
+                            where peri_codigo != @peri_codigo
                         ";
 
                 SqlCommand comando = accesoDatos.PrepararConsulta(query);
                 comando.Parameters.AddWithValue("@peri_codigo", _peri_codigo);
-                comando.Parameters.AddWithValue("@peri_default", "S");
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)

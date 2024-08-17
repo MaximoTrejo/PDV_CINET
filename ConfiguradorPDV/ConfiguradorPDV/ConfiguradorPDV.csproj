@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -81,6 +81,7 @@
     <Compile Include="Controllers\cbtein_sucursal_controller.cs" />
     <Compile Include="Controllers\cbtexcatdgi_controller.cs" />
     <Compile Include="Controllers\cbte_egresos_n_controller.cs" />
+    <Compile Include="Controllers\cbte_ingresos_controller.cs" />
     <Compile Include="Controllers\cbte_ingresos_n_controller.cs" />
     <Compile Include="Controllers\clientes_controller.cs" />
     <Compile Include="Controllers\comprobantes_d_controller.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Modelo\cbtein_sucursal.cs" />
     <Compile Include="Modelo\cbtexcatdgi.cs" />
     <Compile Include="Modelo\cbte_egresos_n.cs" />
+    <Compile Include="Modelo\cbte_ingresos.cs" />
     <Compile Include="Modelo\cbte_ingresos_n.cs" />
     <Compile Include="Modelo\clientes.cs" />
     <Compile Include="Modelo\comprobantes_d.cs" />

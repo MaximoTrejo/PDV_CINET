@@ -25,21 +25,51 @@ namespace ConfiguradorPDV.Controllers
             {
                 string ConexionEquipo = _equipo.VerificarLinkedServer();
                 categdgi categdgi = new categdgi(_conexion);
-                categdgi.modificarUno(ConexionEquipo, "I", "FAB");
-                categdgi.modificarUno(ConexionEquipo, "N", "FAB");
-                categdgi.modificarUno(ConexionEquipo, "M", "FAB");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "I", "FAB");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "N", "FAB");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "M", "FAB");
             }
             else
             {
                 string ConexionEquipo = _equipo.VerificarLinkedServer();
                 categdgi categdgi = new categdgi(_conexion);
-                categdgi.modificarUno(ConexionEquipo, "I", "FAA");
-                categdgi.modificarUno(ConexionEquipo, "N", "FAA");
-                categdgi.modificarUno(ConexionEquipo, "M", "FAA");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "I", "FAA");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "N", "FAA");
+                categdgi.modificarComprobanteDefault(ConexionEquipo, "M", "FAA");
             }
           
 
 
+        }
+        
+        public void modificarComprobanteFacturaM()
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            categdgi categdgi = new categdgi(_conexion);
+            categdgi.modificarComprobanteDefault(ConexionEquipo, "I", "FMA");
+            categdgi.modificarComprobanteNotaCreditoDefault(ConexionEquipo, "I", "NCM");
+            categdgi.modificarComprobanteDefault(ConexionEquipo, "M", "FMA");
+            categdgi.modificarComprobanteNotaCreditoDefault(ConexionEquipo, "M", "NCM");
+        }
+
+        public void modificarComprobanteFacturaA()
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            categdgi categdgi = new categdgi(_conexion);
+            categdgi.modificarComprobanteDefault(ConexionEquipo, "I", "FAA");
+            categdgi.modificarComprobanteNotaCreditoDefault(ConexionEquipo, "I", "NCA");
+            categdgi.modificarComprobanteDefault(ConexionEquipo, "M", "FAA");
+            categdgi.modificarComprobanteNotaCreditoDefault(ConexionEquipo, "M", "NCA");
+        }
+
+
+        public string UsaFacturaAoM()
+        {
+            string exito;
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+            categdgi categdgi = new categdgi(_conexion);
+            exito=categdgi.traerUno(ConexionEquipo,"M");
+            return exito;
         }
     }
 }

@@ -30,10 +30,6 @@ namespace ConfiguradorPDV
             dataBase_.LimpiarPDV();
         }
 
-        private void btnRegenerarCierre_Click(object sender, EventArgs e)
-        {
-            dataBase_.RegenerarCierre();
-        }
 
         private void btnElimSucInactivas_Click(object sender, EventArgs e)
         {

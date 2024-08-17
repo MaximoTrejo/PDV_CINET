@@ -33,10 +33,11 @@ namespace ConfiguradorPDV.Controllers
             comprobantes_D.modificarFormula(ConexionEquipo);
 
         }
-        public void insertarComprobante(string comprobante, string modulo, string concepto, string fromula)
+        public void insertarComprobante(string comprobante, string modulo, string concepto, string fromula,string orden)
         {
             string ConexionEquipo = _equipo.VerificarLinkedServer();
-            comprobantes_d comprobantes_D = new comprobantes_d(_conexion, comprobante, modulo, concepto, fromula);
+            comprobantes_d comprobantes_D = new comprobantes_d(_conexion, comprobante, modulo, concepto, fromula, orden);
+            comprobantes_D.eliminarUno(ConexionEquipo);
             comprobantes_D.insertarUno(ConexionEquipo);
 
         }

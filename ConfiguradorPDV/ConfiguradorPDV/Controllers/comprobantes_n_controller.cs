@@ -90,5 +90,22 @@ namespace ConfiguradorPDV.Controllers
 
 
         }
+
+        public void insertarComprobantes(string comprobante)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+
+            string sucActual = _parametros_Controller.TraerValorParametro("VTAPUNTO");
+
+            comprobantes_n comprobantes_N = new comprobantes_n(_conexion, sucActual);
+
+
+            if (comprobantes_N.BuscarComprobantes(ConexionEquipo, sucActual) == 0)
+            {
+                comprobantes_N.insertarUnoVtas(ConexionEquipo, comprobante);
+
+            }
+
+        }
     }
 }

@@ -16,18 +16,21 @@ namespace ConfiguradorPDV.Modelo
         string _cbtee_modulo;
         string _cpto_codigo;
         string _cbted_formula;
+        string _cbted_orden;
 
         public comprobantes_d(Factory conexion, 
             string cbtee_codigo = null,
             string cbtee_modulo=null,
             string cpto_codigo=null,
-            string cbted_formula=null)
+            string cbted_formula=null,
+            string cbted_orden=null)
         {
             _conexion = conexion;
             _cbtee_codigo = cbtee_codigo;
             _cbtee_modulo = cbtee_modulo;
             _cpto_codigo = cpto_codigo;
             _cbted_formula = cbted_formula;
+            _cbted_orden = cbted_orden;
         }
 
         public void eliminarUno(string ConexionEquipo)
@@ -77,7 +80,7 @@ namespace ConfiguradorPDV.Modelo
                 comando.Parameters.AddWithValue("@modulo", _cbtee_modulo);
                 comando.Parameters.AddWithValue("@concepto", _cpto_codigo);
                 comando.Parameters.AddWithValue("@formula", _cbted_formula);
-                comando.Parameters.AddWithValue("@orden","8");
+                comando.Parameters.AddWithValue("@orden", _cbted_orden);
                 comando.Parameters.AddWithValue("@pie", "N");
                 comando.Parameters.AddWithValue("@condicion", ".T.");
                 comando.Parameters.AddWithValue("@porcentaje", "0.00");

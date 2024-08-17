@@ -20,17 +20,21 @@ namespace ConfiguradorPDV
         parametros_controller parametros_;
         comprobantes_e_controller comprobantes_E_;
         comprobantes_d_controller comprobantes_D_;
+        comprobantes_n_controller comprobantes_N_;
         categdgi_controller categdgi_;
         cbtexcatdgi_controller cbtexcatdgi_;
+        cbte_ingresos_controller cbte_ingresos_;
         public FrmConfiguracionExtra(Factory factory, LinkedServer linkedServer_)
         {
             InitializeComponent();
             this.factory = factory;
             LinkedServer_ = linkedServer_;
+            cbte_ingresos_= new cbte_ingresos_controller(factory, linkedServer_);
             parametros_ = new parametros_controller(factory, linkedServer_);
             comprobantes_E_ = new comprobantes_e_controller(factory, linkedServer_);
             categdgi_ = new categdgi_controller(factory, linkedServer_);
             comprobantes_D_ = new comprobantes_d_controller(factory, linkedServer_);
+            comprobantes_N_ = new comprobantes_n_controller(factory, linkedServer_);
             cbtexcatdgi_ = new cbtexcatdgi_controller(factory, linkedServer_);
         }
 
@@ -99,13 +103,14 @@ namespace ConfiguradorPDV
                 comprobantes_E_.modificarCodigoComprobantes("M");
                 categdgi_.modificarComprobanteCategdgi("M");
                 parametros_.modificarParametros("IVA_MONO", "", EsMonotributista);
-                cbtexcatdgi_.modificarCbtexcatdgi("C", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("E", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("I", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("M", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("N", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("T", "vtas", "FAB");
-                cbtexcatdgi_.modificarCbtexcatdgi("X", "vtas", "FAB");
+
+                cbtexcatdgi_.insertarCbtexcatdgi("C", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("E", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("I", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("M", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("N", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("T", "vtas", "FAB");
+                cbtexcatdgi_.insertarCbtexcatdgi("X", "vtas", "FAB");
                 comprobantes_D_.eliminarComprobante("FAB", "VTAS", "IVA1");
                 comprobantes_D_.modificarFormulaComprobante("FAB", "VTAS", "NETO1", "NETO1=SUBTOTAL");
             }
@@ -114,7 +119,7 @@ namespace ConfiguradorPDV
                 comprobantes_E_.modificarCodigoComprobantes("FE");
                 categdgi_.modificarComprobanteCategdgi("FE");
                 parametros_.modificarParametros("IVA_MONO", "", EsMonotributista);
-                comprobantes_D_.insertarComprobante("FAB", "VTAS", "IVA1", "IVA1=ROUND((SUBTOTAL-DTO1)*17.3553719008264/100,4)");
+                comprobantes_D_.insertarComprobante("FAB", "VTAS", "IVA1", "IVA1=ROUND((SUBTOTAL-DTO1)*17.3553719008264/100,4)","8");
                 comprobantes_D_.modificarFormulaComprobante("FAB", "VTAS", "NETO1", "NETO1=ROUND((SUBTOTAL-EXENTO-DTO1-DTO2-DTO3)/1.21,4)");
             }
             
@@ -124,6 +129,44 @@ namespace ConfiguradorPDV
         private void btnUsaFacturaM_Click(object sender, EventArgs e)
         {
 
+            if (categdgi_.UsaFacturaAoM() == "FMA")
+            {
+                //desactiva factura M
+                cbtexcatdgi_.insertarCbtexcatdgi("I", "VTAS", "FAA");
+                cbtexcatdgi_.insertarCbtexcatdgi("M", "VTAS", "FAA");
+                cbtexcatdgi_.insertarCbtexcatdgi("N", "VTAS", "FAA");
+                categdgi_.modificarComprobanteFacturaA();
+                MessageBox.Show("Se desactivo la factura M", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //se activa la factura M
+                comprobantes_E_.insertarComprobantes("FMA", "VTAS", "FACTURA M", "051");
+                comprobantes_N_.insertarComprobantes("FMA");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "DTO1", "DTO1=round(SUBTOTAL*PORCEDTO1/100,2)", "2");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "DTO1", "DTO1=round(SUBTOTAL*PORCEDTO1/100,2)", "2");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "DTO2", "DTO2=round((SUBTOTAL-DTO1) * PORCEDTO2/100,2)", "2");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "DTO3", "DTO3=round((SUBTOTAL-DTO1-DTO2) *PORCEDTO3/100,2)", "2");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "EXENTO", "EXENTO=SUBTOTAL-DTO1-DTO2-DTO3+AGENCIA", "4");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "IVA1", "IVA1=ROUND((SUBTOTAL-DTO1)*17.355/100,2)", "8");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "IVA2", "IVA2=round(NETO2*g_iva2/100,2)", "8");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "NETO1", "NETO1=round((SUBTOTAL-EXENTO-DTO1-DTO2-DTO3)/1.21,4)", "5");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "NETO2", "NETO2=round((SUBTOTAL-EXENTO-DTO1-DTO2-DTO3)/1.105,4)", "6");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "SUBTOTAL", "SUBTOTAL=round(CANT*PRECIO,2)", "1");
+                comprobantes_D_.insertarComprobante("FMA", "VTAS", "TOTAL", "TOTAL=NETO1+IVA1+EXENTO+NETO2+IVA2+PERIB", "10");
+                string pdv = parametros_.TraerValorParametro("VTAPUNTO");
+                cbte_ingresos_.insertarComprobante("FMA", "FACTURA M", pdv);
+
+                //
+                cbtexcatdgi_.insertarCbtexcatdgi("I", "VTAS", "FMA");
+                cbtexcatdgi_.insertarCbtexcatdgi("M", "VTAS", "FMA");
+
+
+                categdgi_.modificarComprobanteFacturaM();
+                MessageBox.Show("Se activo la factura M", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
     }
 }

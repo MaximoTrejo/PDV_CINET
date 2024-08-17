@@ -20,7 +20,7 @@ namespace ConfiguradorPDV.Controllers
         }
 
 
-        public void modificarCbtexcatdgi(string cardgi, string modulo, string codigo)
+        public void insertarCbtexcatdgi(string cardgi, string modulo, string codigo)
         {
 
             string ConexionEquipo = _equipo.VerificarLinkedServer();
@@ -35,5 +35,6 @@ namespace ConfiguradorPDV.Controllers
             }
 
         }
+
     }
 }

@@ -83,11 +83,20 @@ namespace ConfiguradorPDV.Controllers
                     break;
             }
 
+        }
 
 
+        public void insertarComprobantes(string comprobante,string modulo , string descripcion , string codigo)
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
 
+            comprobantes_e comprobantes_E = new comprobantes_e(_conexion, comprobante, modulo, descripcion, cbtee_coddgi: codigo);
+
+            if (comprobantes_E.BuscarComprobante(ConexionEquipo, comprobante) == 0)
+            {
+                comprobantes_E.insertarUno(ConexionEquipo);
+            }
             
-
         }
     }
 }
