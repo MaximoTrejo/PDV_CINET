@@ -204,7 +204,7 @@ namespace ConfiguradorPDV.Controllers
                     SELECT cbtee_codigo
                     FROM {ConexionEquipo}.COMPROBANTES_N
                     WHERE SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
-                );
+                )and SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN');
                 
                 
                 UPDATE {ConexionEquipo}.COMPROBANTES_N
@@ -212,13 +212,13 @@ namespace ConfiguradorPDV.Controllers
                     SELECT CAST(MAX(VENE_NUMERO) AS INT)
                     FROM {ConexionEquipo}.ventas_e ve
                     WHERE ve.cbtee_codigo = COMPROBANTES_N.cbtee_codigo
-                    AND ve.SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
+                    AND ve.SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'VTAPUNTO')
                 ), 0)
                 WHERE cbtee_codigo IN (
                     SELECT cbtee_codigo
                     FROM {ConexionEquipo}.COMPROBANTES_N
-                    WHERE SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
-                );
+                    WHERE SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'VTAPUNTO')
+                )and SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'VTAPUNTO');
 
 
             ";
