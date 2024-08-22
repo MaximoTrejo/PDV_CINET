@@ -184,5 +184,50 @@ namespace ConfiguradorPDV.Controllers
 
         }
 
+
+        public void CorregirCorrelatividad()
+        {
+            string ConexionEquipo = _equipo.VerificarLinkedServer();
+
+            AccesoDatos accesoDatos = _conexion.ObtenerConexion();
+
+            string query = $@"
+                
+                UPDATE {ConexionEquipo}.COMPROBANTES_N
+                SET cbten_numero = COALESCE((
+                    SELECT CAST(MAX(VENE_NUMERO) AS INT)
+                    FROM {ConexionEquipo}.ventas_e ve
+                    WHERE ve.cbtee_codigo = COMPROBANTES_N.cbtee_codigo
+                    AND ve.SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
+                ), 0)
+                WHERE cbtee_codigo IN (
+                    SELECT cbtee_codigo
+                    FROM {ConexionEquipo}.COMPROBANTES_N
+                    WHERE SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
+                );
+                
+                
+                UPDATE {ConexionEquipo}.COMPROBANTES_N
+                SET cbten_numero = COALESCE((
+                    SELECT CAST(MAX(VENE_NUMERO) AS INT)
+                    FROM {ConexionEquipo}.ventas_e ve
+                    WHERE ve.cbtee_codigo = COMPROBANTES_N.cbtee_codigo
+                    AND ve.SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
+                ), 0)
+                WHERE cbtee_codigo IN (
+                    SELECT cbtee_codigo
+                    FROM {ConexionEquipo}.COMPROBANTES_N
+                    WHERE SUC_CODIGO = (SELECT PARA_VALOR FROM {ConexionEquipo}.PARAMETROS WHERE PARA_CODIGO = 'PTOVTAMAN')
+                );
+
+
+            ";
+
+            SqlCommand comando = accesoDatos.PrepararConsulta(query);
+
+            comando.ExecuteReader();
+        }
+
+
     }
 }

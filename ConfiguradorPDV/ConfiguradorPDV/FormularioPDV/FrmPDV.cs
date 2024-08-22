@@ -210,7 +210,7 @@ namespace ConfiguradorPDV
             comprobantes_N_.modificarComprobantesManuales(sucursalManual);
             parametros_.modificarParametros("PTOVTAMAN", "SucursalManual", sucursalManual);
             parametros_.modificarParametros("APCAJON", "", "N");
-            parametros_.modificarParametros("USACOMMANU", "","N");
+            parametros_.modificarParametros("USACOMMANU", "","S");
             sucursales_.modificarSucursalesInactivas();
 
         }

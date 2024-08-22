@@ -30,6 +30,7 @@
         {
             this.btnLimpiarPDV = new System.Windows.Forms.Button();
             this.btnElimSucInactivas = new System.Windows.Forms.Button();
+            this.btnCorrelatividad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLimpiarPDV
@@ -52,11 +53,22 @@
             this.btnElimSucInactivas.UseVisualStyleBackColor = true;
             this.btnElimSucInactivas.Click += new System.EventHandler(this.btnElimSucInactivas_Click);
             // 
+            // btnCorrelatividad
+            // 
+            this.btnCorrelatividad.Location = new System.Drawing.Point(93, 66);
+            this.btnCorrelatividad.Name = "btnCorrelatividad";
+            this.btnCorrelatividad.Size = new System.Drawing.Size(117, 48);
+            this.btnCorrelatividad.TabIndex = 3;
+            this.btnCorrelatividad.Text = "Corregir correlatividad";
+            this.btnCorrelatividad.UseVisualStyleBackColor = true;
+            this.btnCorrelatividad.Click += new System.EventHandler(this.btnCorrelatividad_Click);
+            // 
             // FrmSQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(222, 78);
+            this.ClientSize = new System.Drawing.Size(222, 122);
+            this.Controls.Add(this.btnCorrelatividad);
             this.Controls.Add(this.btnElimSucInactivas);
             this.Controls.Add(this.btnLimpiarPDV);
             this.Name = "FrmSQL";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.Button btnLimpiarPDV;
         private System.Windows.Forms.Button btnElimSucInactivas;
+        private System.Windows.Forms.Button btnCorrelatividad;
     }
 }

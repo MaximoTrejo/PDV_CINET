@@ -41,5 +41,10 @@ namespace ConfiguradorPDV
             //cambiar titulo formulario
             this.Text = "FrmMP " + LinkedServer_._equipo + LinkedServer_._puerto;
         }
+
+        private void btnCorrelatividad_Click(object sender, EventArgs e)
+        {
+            dataBase_.CorregirCorrelatividad();
+        }
     }
 }
